@@ -1,15 +1,16 @@
+import { app as firebase } from './firebase-config.js';
 
 var coll = document.getElementsByClassName("collapsible");
 
-//for RD update this via CSS root var later
-var dropdownBlockSize = "200px"
+var dropdownContent = document.querySelectorAll(".dropdowns .collapsible .content")
+
 
 for (let i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
     var content = this.nextElementSibling;
 
-    if (content.style.height == dropdownBlockSize) {
+    if (parseInt(content.style.height) != 0 && content.style.height) {
 
       content.style.height = "0";
       
@@ -17,8 +18,7 @@ for (let i = 0; i < coll.length; i++) {
       icon.classList.remove('ph-caret-up');
       icon.classList.add('ph-caret-down');
     } else {
-
-      content.style.height = dropdownBlockSize;
+      content.style.height = content.firstElementChild.offsetHeight + "px";
 
       let icon = this.querySelector('i');
       icon.classList.remove('ph-caret-down');

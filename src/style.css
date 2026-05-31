@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
-/* 
+
 :root {
-} */
+
+  --default-ease: all 0.3s ease;
+  --default-ease-out: all 0.3s ease-out;
+  ----default-ease-in-out: all 0.3s ease-in-out;
+}
 
 html,
 body {
@@ -27,7 +31,7 @@ body {
   font-family: "Geist", sans-serif;
   font-size: 14px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: var(--default-ease);
 }
 
 .filled-btn:hover {
@@ -43,7 +47,7 @@ body {
   font-family: "Geist", sans-serif;
   font-size: 14px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: var(--default-ease);
 }
 
 .outline-btn:hover {
@@ -85,7 +89,7 @@ nav .container .links a {
   font-weight: 200;
   margin-right: 32px;
   font-size: 16px;
-  transition: 0.3s ease;
+  transition: var(--default-ease);
 }
 
 nav .container .links a:hover {
@@ -196,7 +200,38 @@ main .services .container .text h2 {
 
 main .services .container .text h2 .highlight {
   color: white;
+  filter: drop-shadow(0px 4px 10px gray);
+  position: relative;
 }
+
+main .services .container .text h2 .keyword {
+  transition: var(--default-ease);
+}
+
+main .services .container .text h2 .keyword:hover {
+  filter: drop-shadow(0px 2px 8px #666);
+  cursor: pointer;
+  color: white;
+}
+/* 
+main .services .container .text h2 .keyword::after {
+  content: "";
+
+  position: absolute; 
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+  width: 0%;
+  height: 2px;
+  /* transform: scaleX(0) transformX(-50%); */
+  /* transition: all 0.3s ease;
+} */
+
+/* main .services .container .text h2 .keyword:hover::after {
+  /* transform: scaleX(1) transformX(0); */
+  /* width: 100%; */
+/* }   */
 
 main .services .container .dropdowns {
   width: 40%;
@@ -228,7 +263,7 @@ main .services .container .dropdowns ul li .collapsible {
   display: flex;
   align-items: center;
   justify-content: end;
-  transition: 0.3s ease;
+  transition: var(--default-ease);
 }
 
 main .services .container .dropdowns ul li .collapsible:hover {
@@ -256,7 +291,7 @@ main .services .container .dropdowns ul li .content {
   font-weight: 200;
   margin-top: 4px;
   text-align: left;
-  transition: 0.3s ease;
+  transition: var(--default-ease);
 }
 
 main .testimonials .container {
@@ -278,7 +313,7 @@ main .testimonials .container .logos {
 main .testimonials .container .logos img {
   height: 64px;
   opacity: 66.7%;
-  transition: 0.3s ease;
+  transition: var(--default-ease);
 }
 
 main .testimonials .container .logos img:hover {
@@ -300,6 +335,202 @@ main .process .container {
   margin-top: 128px;
   margin-bottom: 128px;
   display: flex;
+  flex-direction: column;
+}
+
+main .process .container h2 {
+  font-weight: 500;
+  font-size: 36px;
+  letter-spacing: -0.05em;
+  margin-bottom: 64px;
+}
+
+main .process .container .content {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+/* main .process .container .content .timeline-block {
+
+}
+
+main .process .container .content .timeline-block:hover {
+} */
+
+main .process .container .content .timeline-block .line-box {
+  display: flex;
+  align-items: center;
+
+}
+
+main .process .container .content .timeline-block .line-box .dot {
+  min-width: 24px;
+  min-height: 24px;
+  background: #1A1B1E;
+  border-radius: 50%;
+  position: relative;
+  transition: var(--default-ease);
+}
+
+main .process .container .content .timeline-block:hover .line-box .dot
+main .process .container .content .timeline-block:active .line-box .dot {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+main .process .container .content .timeline-block:hover .line-box .dot::before,
+main .process .container .content .timeline-block:active .line-box .dot::before {
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 10px #f7f7f7, 
+              0 0 30px #f7f7f7, 
+              0 0 60px #f7f7f7;
+}
+
+main .process .container .content .timeline-block .line-box .dot::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #62666D;
+  margin-left: -3px;
+  margin-top: -3px;
+  z-index: 1;
+  transition: var(--default-ease);
+}
+
+
+main .process .container .content .timeline-block .line-box .line { 
+  width: 90%;
+  margin: 0 5%;
+  opacity: 50%;
+  border: 1px solid;
+  border-color: rgba(255,255,255,.5);
+}
+
+main .process .container .content .timeline-block .line-box .line.final-line {
+  border: none;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(255,255,255,.5), rgba(0,0,0,0))
+}
+
+main .process .container .content .timeline-block .text {
+  transition: var(--default-ease-out)
+}
+
+main .process .container .content .timeline-block:hover .text,
+main .process .container .content .timeline-block:active .text {
+  transform: translateY(-2px);
+  filter: drop-shadow(6px 6px 8px gray);
+}
+
+main .process .container .content .timeline-block .text h4 {
+  padding: 0px 8px;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  font-size: 18px;
+  margin-top: 32px;
+  /* margin-bottom: 64px; */
+}
+
+main .process .container .content .timeline-block .text p {
+  text-wrap: balance;
+  padding: 16px 8px;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 200;
+  font-size: 14px;
+  max-width: 95%;
+}
+
+main .faq .container {
+  margin-top: 128px;
+  margin-bottom: 128px;
+  display: flex;
+  flex-direction: column;
+}
+
+main .faq .container h2 {
+  font-weight: 500;
+  font-size: 36px;
+  letter-spacing: -0.05em;
+  margin-bottom: 64px;
+}
+
+main .faq .container .dropdowns ul {
+  list-style: none;
+  height: 100%;
+  width: 100%;
+}
+main .faq .container .dropdowns ul li {
+  margin-bottom: 32px;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+main .faq .container .dropdowns ul li .collapsible {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  padding: 18px;
+  padding-left: 0;
+  width: 100%;
+  border: none;
+  /* text-align: right; */
+  outline: none;
+  font-size: 24px;
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  /* justify-content: end; */
+  transition: var(--default-ease);
+}
+
+main .faq .container .dropdowns ul li .collapsible:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+main .faq .container .dropdowns ul li .collapsible i {
+  margin-right: 16px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+main .faq .container .dropdowns ul li .active,
+.collapsible:hover {
+  background-color: transparent;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+main .faq .container .dropdowns ul li .content {
+  padding: 0 18px;
+  margin-left: 22px;
+  /* display: none; */
+  height: 0;
+  overflow: hidden;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 200;
+  margin-top: 4px;
+  text-align: left;
+  transition: var(--default-ease);
+}
+
+main .cta .container {
+  margin-top: 32px;
+  margin-bottom: 192px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .cta .container h1 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 64px;
+  letter-spacing: -0.05em;
+  margin-bottom: 64px;
 }
 
 footer {
@@ -333,12 +564,13 @@ footer .footer-list {
 }
 
 footer .footer-list li {
-  transition: all 0.3s ease-out;
+  transition: var(--default-ease-out);
 }
 
 footer .footer-list li a {
   text-decoration: none;
   position: relative;
+  font-size: 24px;
 }
 
 footer .footer-list li a::before {
@@ -362,7 +594,7 @@ footer .footer-list li a::after {
   left: 0;
   background-color: #000;
   /* transform: scaleX(0); */
-  transition: all 0.3s ease;
+  transition: var(--default-ease);
   
 }
 
@@ -387,7 +619,8 @@ footer .container .footer-top .footer-brand {
 }
 
 footer .container .footer-top .footer-brand .footer-logo {
-  width: 400px;
+  /* width: 400px; */
+  height: 128px;
   padding: 36px 0;
   filter: invert(100%);
 }
@@ -442,13 +675,25 @@ footer .container .footer-bottom .footer-social {
 }
 
 footer .container .footer-bottom .footer-social .social-link {
-  padding: 0 22px;
+  width: 24px;
+  height: 24px;
+  margin: 0 22px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: var(--default-ease);
   transform: scale(1.1)
 }
 
+footer .container .footer-bottom .footer-social .social-link:hover {
+  transform: translateY(-2px);
+}
+
 footer .container .footer-bottom .footer-social .social-link svg {
-  transform: scale(1.1)
+  transition: var(--default-ease);
+  transform: scale(1.1) 
+}
+
+footer .container .footer-bottom .footer-social .social-link:hover svg {
+  transform: scale(1.2) 
 }
