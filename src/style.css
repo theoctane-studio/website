@@ -12,6 +12,7 @@ body {
   background: black;
   color: white;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -20,6 +21,7 @@ body {
   box-sizing: border-box;
   font-family: "Geist", sans-serif;
   user-select: none;
+  scroll-behavior: smooth;
 }
 
 .filled-btn {
