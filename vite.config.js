@@ -19,6 +19,7 @@ export default defineConfig({
         terms: resolve(__dirname, '/legal/terms.html'),
         disclosures: resolve(__dirname, '/legal/disclosures.html'),
         licensing: resolve(__dirname, "/legal/licensing.html"),
+        404: resolve(__dirname, "/404.html"),
       },
     },
   },
