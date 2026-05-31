@@ -1,6 +1,6 @@
 {
-  "name": "code",
-  "version": "0.0.0",
+  "name": "octane",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
