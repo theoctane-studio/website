@@ -69,3 +69,32 @@ function initializeScrollAnimations() {
     observer.observe(element);
   });
 }
+
+const contactNavBtn = document.getElementById('contact-btn-nav');
+contactNavBtn.addEventListener('click', () => {
+
+  location.href = '/contact.html';
+
+});
+
+const contactHeroBtn = document.getElementById('contact-btn-hero');
+const workHeroBtn = document.getElementById('work-btn-hero');
+
+contactHeroBtn.addEventListener('click', () => {
+
+  location.href = '/contact.html';
+
+});
+
+workHeroBtn.addEventListener('click', () => {
+
+  location.href = '/work.html';
+
+});
+
+const contactCTABtn = document.getElementById('contact-btn-cta');
+contactCTABtn.addEventListener('click', () => {
+
+  location.href = '/contact.html';
+
+})
