@@ -363,7 +363,7 @@ main .process .container .content .timeline-block .line-box .dot {
   transition: var(--default-ease);
 }
 
-main .process .container .content .timeline-block:hover .line-box .dot
+main .process .container .content .timeline-block:hover .line-box .dot,
 main .process .container .content .timeline-block:active .line-box .dot {
   background: rgba(255, 255, 255, 0.1);
 }
@@ -396,8 +396,7 @@ main .process .container .content .timeline-block .line-box .line {
   width: 90%;
   margin: 0 5%;
   opacity: 50%;
-  border: 1px solid;
-  border-color: rgba(255,255,255,.5);
+  border: 1px solid rgba(255, 255, 255, .5);
 }
 
 main .process .container .content .timeline-block .line-box .line.final-line {
@@ -417,7 +416,7 @@ main .process .container .content .timeline-block:active .text {
 }
 
 main .process .container .content .timeline-block .text h4 {
-  padding: 0px 8px;
+  padding: 0 8px;
   font-weight: 500;
   letter-spacing: -0.05em;
   font-size: 18px;
@@ -462,8 +461,7 @@ main .faq .container .dropdowns ul li .collapsible {
   background-color: transparent;
   color: rgba(255, 255, 255, 1);
   cursor: pointer;
-  padding: 18px;
-  padding-left: 0;
+  padding: 18px 18px 18px 0;
   width: 100%;
   border: none;
   /* text-align: right; */
@@ -596,7 +594,7 @@ footer .footer-list li a::after {
   content: "";
   position: absolute;
   z-index: 1;
-  width: 0%;
+  width: 0;
   height: 2px;
   bottom: 0;
   left: 0;
@@ -745,13 +743,13 @@ footer .container .footer-bottom .footer-social .social-link:hover svg {
 
   main .services .container {
     margin-top: 64px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     flex-direction: column;
   }
 
   main .services .container .text {
     width: 100%;
-    padding-right: 0px;
+    padding-right: 0;
     margin-bottom: 32px;
   }
 
@@ -761,7 +759,7 @@ footer .container .footer-bottom .footer-social .social-link:hover svg {
 
   main .services .container .dropdowns {
     width: 100%;
-    padding-left: 0px;
+    padding-left: 0;
   }
 
   main .services .container .dropdowns ul li {
@@ -770,13 +768,13 @@ footer .container .footer-bottom .footer-social .social-link:hover svg {
 
   /* Style the button that is used to open and close the collapsible content */
   main .services .container .dropdowns ul li .collapsible {
-    padding: 18px 0px;
+    padding: 18px 0;
     justify-content: start;
   }
 
   /* Style the collapsible content. Note: hidden by default */
   main .services .container .dropdowns ul li .content {
-    padding: 0px;
+    padding: 0;
     /* display: none; */
   }
 
@@ -795,7 +793,7 @@ footer .container .footer-bottom .footer-social .social-link:hover svg {
 
   main .process .container {
     margin-top: 64px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   main .process .container h2 {
@@ -831,7 +829,7 @@ footer .container .footer-bottom .footer-social .social-link:hover svg {
   }
 
   main .process .container .content .timeline-block .text h4 {
-    padding: 0px 8px;
+    padding: 0 8px;
     font-size: 18px;
     margin-top: 24px;
   }
