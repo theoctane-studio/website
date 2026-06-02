@@ -56,6 +56,51 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
+#mobile-menu {
+  position: fixed;
+  z-index: 100000;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  flex-direction: column;
+}
+
+#mobile-menu nav {
+  position: relative;
+}
+
+#mobile-menu .content {
+  padding: 24px;
+}
+
+#mobile-menu .content ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+#mobile-menu .content ul h3 {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 32px;
+  font-weight: 200;
+}
+
+#mobile-menu .content ul a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
+#mobile-menu .content ul a:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
 nav {
   position: fixed;
   z-index: 1000;
@@ -691,11 +736,15 @@ footer .container .footer-bottom .footer-social .social-link svg {
   transform: scale(1.1) 
 }
 
-footer .container .footer-bottom .footer-social .social-link:hover svg {
+/* footer .container .footer-bottom .footer-social .social-link:hover svg {
   transform: scale(1.2) 
-}
+} */
 
-@media (max-width: 430px) {
+/* For HELLA small devices and also the S25 for some reason??? wtf samsung
+ik there's prob a better way to do this but atp
+i dont fkn care if i have to duplicate CSS coz fuck CSS
+so this is what its gonna be since it works */
+@media (max-width: 360px) {
   nav .container .links a {
     display: none;
   }
@@ -714,7 +763,271 @@ footer .container .footer-bottom .footer-social .social-link:hover svg {
     transition: 0.3s ease;
   }
 
+  nav .container .links #mobile-menu-close-btn {
+    display: inline;
+    margin-right: 24px;
+    margin-left: 16px;
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
   nav .container .links #mobile-menu-btn:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  nav .container .links #mobile-menu-close-btn:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  main section .container {
+    width: 336px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  main .hero .container {
+    margin-top: 48px;
+  }
+
+  main .hero .container h1 {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  main .hero .container p {
+    font-size: 14px;
+  }
+
+  main .hero .container .call-to-action {
+    margin-bottom: 48px;
+  }
+
+  main .hero .container .window {
+    padding: 12px;
+    margin-bottom: 24px;
+  }
+
+  main .services .container {
+    margin-top: 64px;
+    margin-bottom: 0;
+    flex-direction: column;
+  }
+
+  main .services .container .text {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 32px;
+  }
+
+  main .services .container .text h2 {
+    font-size: 24px;
+  }
+
+  main .services .container .dropdowns {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  main .services .container .dropdowns ul li {
+    margin-bottom: 16px;
+  }
+
+  /* Style the button that is used to open and close the collapsible content */
+  main .services .container .dropdowns ul li .collapsible {
+    padding: 18px 0;
+    justify-content: start;
+    font-size: 21px;
+  }
+
+  /* Style the collapsible content. Note: hidden by default */
+  main .services .container .dropdowns ul li .content {
+    padding: 0;
+    /* display: none; */
+  }
+
+  main .testimonials .container {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  main .testimonials .container .logos {
+    margin-bottom: 64px;
+  }
+
+  main .testimonials .container .logos img {
+    height: 32px;
+  }
+
+  main .process .container {
+    margin-top: 64px;
+    margin-bottom: 0;
+  }
+
+  main .process .container h2 {
+    font-size: 24px;
+    margin-bottom: 48px;
+  }
+
+  main .process .container .content {
+    flex-direction: column;
+  }
+
+  main .process .container .content .timeline-block {
+    margin-bottom: 48px;
+  }
+
+  main .process .container .content .timeline-block .line-box .dot {
+    min-width: 16px;
+    min-height: 16px;
+  }
+
+  main .process .container .content .timeline-block .line-box .dot::before {
+    width: 4px;
+    height: 4px;
+    margin-left: -2px;
+    margin-top: -2px;
+  }
+
+  main .process .container .content .timeline-block .line-box .line { 
+    margin: 0 2.5%;
+    border: none;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(255,255,255,.5), rgba(0,0,0,0))
+  }
+
+  main .process .container .content .timeline-block .text h4 {
+    padding: 0 8px;
+    font-size: 18px;
+    margin-top: 24px;
+  }
+
+  main .process .container .content .timeline-block .text p {
+    padding: 12px 8px;
+  }
+
+  main .faq .container {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+
+  main .faq .container h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  main .faq .container .dropdowns ul li {
+    margin-bottom: 24px;
+    margin-right: 20px;
+  }
+
+  /* Style the button that is used to open and close the collapsible content */
+  main .faq .container .dropdowns ul li .collapsible {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  /* Style the collapsible content. Note: hidden by default */
+  main .faq .container .dropdowns ul li .content {
+    margin-left: 16px;
+  }
+
+  main .cta .container {
+    margin-top: 8px;
+    margin-bottom: 128px;
+  }
+
+  main .cta .container h1 {
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer .container {
+    width: 400px;
+    height: 95%;
+    margin: 1.5rem;
+  }
+
+  footer .footer-list li a {
+    font-size: 18px;
+  }
+
+  footer .container .footer-top {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer .container .footer-top .footer-brand .footer-logo {
+    height: 56px;
+    padding: 18px 0;
+  }
+
+  footer .container .footer-top .footer-links .footer-column {
+    width: 50%;
+  }
+
+  footer .container .footer-top .footer-links .footer-column .footer-list li {
+    padding-bottom: 12px;
+  }
+
+  footer .container .footer-top .footer-links .footer-column .footer-list li a {
+    font-size: 18px;
+  }
+
+  footer .container .footer-bottom {
+    margin-top: 64px;
+  }
+
+  footer .container .footer-bottom .footer-social {
+    margin-left: 8px;
+  }
+
+  footer .container .footer-bottom .footer-social .social-link {
+    margin: 0 12px;
+  }
+}
+
+@media (min-width: 361px) and (max-width: 430px) {
+  nav .container .links a {
+    display: none;
+  }
+
+  nav .container .links hr {
+    display: none;
+  }
+
+  nav .container .links #mobile-menu-btn {
+    display: inline;
+    margin-right: 24px;
+    margin-left: 16px;
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  nav .container .links #mobile-menu-close-btn {
+    display: inline;
+    margin-right: 24px;
+    margin-left: 16px;
+    font-size: 32px;
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  nav .container .links #mobile-menu-btn:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  nav .container .links #mobile-menu-close-btn:hover {
     color: rgba(255, 255, 255, 1);
   }
 
@@ -850,6 +1163,7 @@ footer .container .footer-bottom .footer-social .social-link:hover svg {
 
   main .faq .container .dropdowns ul li {
     margin-bottom: 24px;
+    margin-right: 20px;
   }
 
   /* Style the button that is used to open and close the collapsible content */
