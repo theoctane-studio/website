@@ -8,3 +8,10 @@ contactNavBtn.forEach(el => {
 
     });
 })
+
+//logo home button
+document.querySelectorAll('.logo').forEach(logo => {
+    logo.addEventListener('click', () => {
+        location.href = '/';
+    })
+})

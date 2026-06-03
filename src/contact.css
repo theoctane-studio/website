@@ -1,0 +1,98 @@
+main section.hero .container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	gap: 32px;
+	margin-bottom: 96px;
+}
+
+main section.hero .container .window {
+	width: 100%;
+	margin: 0;
+	position: relative;
+}
+
+
+main section.hero .container .window img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+main section.cta .container {
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	padding: 32px 0;
+	margin: 96px 0;
+}
+
+main section.cta .container h2 {
+	text-align: left;
+	text-wrap: balance;
+	
+	font-weight: 500;
+	font-size: 36px;
+	letter-spacing: -0.05em;
+}
+
+/*main section.cta .container .contact-links {}*/
+
+/*main section.cta .container .contact-links .email {}*/
+
+main section.cta .container .contact-links .email .label {
+	font-size: 22px;
+	color: rgba(255, 255, 255, 0.75);
+}
+
+main section.cta .container .contact-links .email a {
+	text-decoration: none;
+	position: relative;
+	font-size: 24px;
+	color: white;
+	transition: var(--default-ease);
+}
+
+main section.cta .container .contact-links .email a:hover {
+	transform: translateX(6px);
+}
+
+
+main section.cta .container .contact-links .email a::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+main section.cta .container .contact-links .email a::after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	width: 0;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+	/* transform: scaleX(0); */
+	transition: var(--default-ease);
+}
+
+main section.cta .container .contact-links .email a:hover::after {
+	/* transform: scaleX(1); */
+	width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+	main section.cta .container {
+		flex-wrap: wrap;
+	}
+	
+	main section.cta .container .contact-links {
+		margin-top: 32px;
+	}
+}
