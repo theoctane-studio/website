@@ -19,7 +19,12 @@ main section.hero .container .window img {
 	height: 100%;
 }
 
-main section.cta .container {
+main section.contact {
+	background: #fff;
+}
+
+main section.contact .container {
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: row;
@@ -28,7 +33,8 @@ main section.cta .container {
 	margin: 96px 0;
 }
 
-main section.cta .container h2 {
+main section.contact .container h2 {
+	color: black;
 	text-align: left;
 	text-wrap: balance;
 	
@@ -37,39 +43,39 @@ main section.cta .container h2 {
 	letter-spacing: -0.05em;
 }
 
-/*main section.cta .container .contact-links {}*/
+/*main section.contact .container .contact-links {}*/
 
-/*main section.cta .container .contact-links .email {}*/
+/*main section.contact .container .contact-links .email {}*/
 
-main section.cta .container .contact-links .email .label {
+main section.contact .container .contact-links .email .label {
 	font-size: 22px;
-	color: rgba(255, 255, 255, 0.75);
+	color: rgba(0, 0, 0, 0.75);
 }
 
-main section.cta .container .contact-links .email a {
+main section.contact .container .contact-links .email a {
 	text-decoration: none;
 	position: relative;
 	font-size: 24px;
-	color: white;
+	color: black;
 	transition: var(--default-ease);
 }
 
-main section.cta .container .contact-links .email a:hover {
+main section.contact .container .contact-links .email a:hover {
 	transform: translateX(6px);
 }
 
 
-main section.cta .container .contact-links .email a::before {
+main section.contact .container .contact-links .email a::before {
 	content: "";
 	position: absolute;
 	width: 100%;
 	height: 2px;
 	bottom: 0;
 	left: 0;
-	background-color: rgba(255, 255, 255, 0.4);
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
-main section.cta .container .contact-links .email a::after {
+main section.contact .container .contact-links .email a::after {
 	content: "";
 	position: absolute;
 	z-index: 1;
@@ -77,22 +83,27 @@ main section.cta .container .contact-links .email a::after {
 	height: 2px;
 	bottom: 0;
 	left: 0;
-	background-color: #fff;
+	background-color: #000;
 	/* transform: scaleX(0); */
 	transition: var(--default-ease);
 }
 
-main section.cta .container .contact-links .email a:hover::after {
+main section.contact .container .contact-links .email a:hover::after {
 	/* transform: scaleX(1); */
 	width: 100%;
 }
 
+main section.cta .container {
+	margin-top: 112px;
+	margin-bottom: 112px;
+}
+
 @media screen and (min-width: 769px) {
-	main section.cta .container {
+	main section.contact .container {
 		flex-wrap: wrap;
 	}
 	
-	main section.cta .container .contact-links {
+	main section.contact .container .contact-links {
 		margin-top: 32px;
 	}
 }
