@@ -7,6 +7,15 @@ contactCTABtn.addEventListener('click', () => {
 
 })
 
+const contactNavBtn = document.querySelectorAll('.contact-btn-nav');
+contactNavBtn.forEach(el => {
+  el.addEventListener('click', () => {
+
+    location.href = '/contact.html';
+
+  });
+})
+
 const mobileMenu = document.getElementById('mobile-menu');
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
