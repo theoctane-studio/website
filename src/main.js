@@ -70,12 +70,16 @@ function initializeScrollAnimations() {
   });
 }
 
-const contactNavBtn = document.getElementById('contact-btn-nav');
-contactNavBtn.addEventListener('click', () => {
+const contactNavBtn = document.querySelectorAll('.contact-btn-nav');
+contactNavBtn.forEach(el => {
+  el.addEventListener('click', () => {
 
-  location.href = '/contact.html';
+    location.href = '/contact.html';
 
-});
+  });
+})
+
+
 
 const contactHeroBtn = document.getElementById('contact-btn-hero');
 const workHeroBtn = document.getElementById('work-btn-hero');
