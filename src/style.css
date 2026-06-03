@@ -121,8 +121,14 @@ nav .container {
   width: 1024px;
 }
 
-nav .container img {
+nav .container img.logo {
   height: 48px;
+  transition: var(--default-ease);
+}
+
+nav .container img.logo:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+  cursor: pointer;
 }
 
 nav .container .links {
@@ -1747,7 +1753,7 @@ so this is what its gonna be since it works */
   }
 
   main .cta .container {
-    margin-top: 0px;
+    margin-top: 0;
   }
 
   main .cta .container h1 {

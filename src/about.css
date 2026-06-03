@@ -121,9 +121,16 @@ nav .container {
   width: 1024px;
 }
 
-nav .container img {
+nav .container img.logo {
   height: 48px;
+  transition: var(--default-ease);
 }
+
+nav .container img.logo:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+  cursor: pointer;
+}
+
 
 nav .container .links {
   display: flex;
@@ -486,7 +493,7 @@ footer .container .footer-bottom .footer-social .social-link svg {
 
   main .about .container {
     flex-direction: column;
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   main .about .container div {
