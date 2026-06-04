@@ -98,9 +98,15 @@ main section.cta .container {
 	margin-bottom: 112px;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (max-width: 769px) {
 	main section.contact .container {
 		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	
+	main section.contact .container * {
+	
 	}
 	
 	main section.contact .container .contact-links {
