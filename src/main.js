@@ -1,6 +1,6 @@
 import { app as firebase } from './firebase-config.js';
 
-var coll = document.getElementsByClassName("collapsible");
+let coll = document.getElementsByClassName("collapsible");
 
 // var dropdownContent = document.querySelectorAll(".dropdowns .collapsible .content")
 
@@ -8,7 +8,7 @@ var coll = document.getElementsByClassName("collapsible");
 for (let i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    var content = this.nextElementSibling;
+    let content = this.nextElementSibling;
 
     if (parseInt(content.style.height) !== 0 && content.style.height) {
 
