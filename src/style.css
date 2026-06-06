@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 
+/*@view-transition {*/
+/*  navigation: auto;*/
+/*}*/
+
+/*::view-transition-group(page-content) {*/
+/*  animation-duration: 1s;*/
+/*  animation-timing-function: ease-out;*/
+/*}*/
+
 :root {
 
   --default-ease: all 0.3s ease;
@@ -162,6 +171,7 @@ nav .container .links #mobile-menu-btn {
 main {
   width: 100%;
   margin-top: 84px;
+  view-transition-name: page-content;
 }
 
 main section {

@@ -113,3 +113,9 @@ main section.cta .container {
 		margin-top: 32px;
 	}
 }
+
+@media screen and (max-width: 600px) {
+	main section.hero .container {
+		flex-direction: column;
+	}
+}
