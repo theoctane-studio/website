@@ -423,7 +423,46 @@ footer .container .footer-bottom .footer-social .social-link svg {
   transform: scale(1.1) 
 }
 
-@media (min-width: 361px) and (max-width: 430px) {
+@media only screen and (max-width: 767px) {
+  main .team .container .members .member {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main .team .container .members .member .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: 24px 0;
+  }
+  
+  main .team .container .members .member .text *,
+  main .team .container .members .member .text p {
+    width: 75% !important;
+    max-width: 75% !important;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main section.about .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+  main section.about .container .right,
+  main section.about .container .left{
+    width: 100%;
+  }
+  
+  main section.about .container .right p {
+    padding: 24px 0;
+  }
+}
+
+@media only screen and (min-width: 361px) and (max-width: 430px) {
   nav .container .links a {
     display: none;
   }
