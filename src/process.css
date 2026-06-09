@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+
+/*@view-transition {*/
+/*  navigation: auto;*/
+/*}*/
+
+/*::view-transition-group(page-content) {*/
+/*  animation-duration: 1s;*/
+/*  animation-timing-function: ease-out;*/
+/*}*/
+
+:root {
+
+  --default-ease: all 0.3s ease;
+  --default-ease-out: all 0.3s ease-out;
+  --default-ease-in-out: all 0.3s ease-in-out;
+}
+
+html,
+body {
+  background: black;
+  color: white;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Geist", sans-serif;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+
+.filled-btn {
+  background: rgba(255, 255, 255, 1);
+  color: black;
+  border: 1px solid transparent;
+  padding: 8px 12px 8px;
+  border-radius: 4px;
+  font-family: "Geist", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--default-ease);
+}
+
+.filled-btn:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.outline-btn {
+  background: rgba(255, 255, 255, 0);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 12px 8px;
+  border-radius: 4px;
+  font-family: "Geist", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--default-ease);
+}
+
+.outline-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#mobile-menu {
+  position: fixed;
+  z-index: 100000;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  flex-direction: column;
+}
+
+#mobile-menu nav {
+  position: relative;
+}
+
+#mobile-menu .content {
+  padding: 24px;
+}
+
+#mobile-menu .content ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+#mobile-menu .content ul h3 {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 32px;
+  font-weight: 200;
+}
+
+#mobile-menu .content ul a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
+#mobile-menu .content ul a:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+nav {
+  position: fixed;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.667);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1024px;
+}
+
+nav .container img.logo {
+  height: 48px;
+  transition: var(--default-ease);
+}
+
+nav .container img.logo:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+  cursor: pointer;
+}
+
+nav .container .links {
+  display: flex;
+  align-items: center;
+}
+
+nav .container .links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.67);
+  font-weight: 200;
+  margin-right: 32px;
+  font-size: 16px;
+  transition: var(--default-ease);
+}
+
+nav .container .links a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+nav .container .links hr {
+  height: 16px;
+  color: rgba(255, 255, 255, 0.2);
+  margin-right: 32px;
+}
+
+nav .container .links #mobile-menu-btn {
+  display: none;
+}
+
+main {
+  width: 100%;
+  margin-top: 84px;
+  view-transition-name: page-content;
+}
+
+main section {
+  display: grid;
+  place-items: center;
+}
+
+main section .container {
+  width: 1024px;
+}
+
+main .hero .container {
+  margin-top: 128px;
+}
+
+main .hero .container h1 {
+  font-size: 56px;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  margin-bottom: 32px;
+}
+
+main .hero .container p {
+  color: rgba(255, 255, 255, 0.67);
+  font-weight: 200;
+  margin-bottom: 32px;
+}
+
+main .hero .container .call-to-action {
+  display: flex;
+  align-items: center;
+  margin-bottom: 84px;
+}
+
+main .hero .container .call-to-action button {
+  margin-right: 8px;
+}
