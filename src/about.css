@@ -236,6 +236,7 @@ main .team .container .members .member img {
     margin-right: 24px;
     height: 192px;
     border-radius: 8px;
+    object-fit: cover;
 }
 
 main .team .container .members .member .text h3 {
