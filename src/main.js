@@ -26,13 +26,37 @@ for (let i = 0; i < coll.length; i++) {
     }
 
   });
-} 
+}
 
-//TODO: pair to html and css later
+/**
+ * Throttle function to limit function calls to once per specified time
+ * @param {Function} func - Function to throttle
+ * @param {number} limit - Time limit in milliseconds
+ * @returns {Function} - Throttled function
+ */
+function throttle(func, limit = 100) {
+  let inThrottle
+  return function executedFunction(...args) {
+    if (!inThrottle) {
+      func(...args)
+      inThrottle = true
+      setTimeout(() => (inThrottle = false), limit)
+    }
+  }
+}
+
+// Scroll events (throttled for performance)
+window.addEventListener(
+    "scroll",
+    throttle(() => {
+      handleScrollAnimations()
+    }, 120),
+)
+
 function initializeScrollAnimations() {
   // Elements to animate on scroll
   const animateElements = document.querySelectorAll(
-    ".anim-left, .anim-right, .anim-up, .anim-down"
+    ".anim-left, .anim-right, .anim-up, .anim-down, .anim-blur"
   );
 
   // Intersection Observer options
@@ -45,14 +69,18 @@ function initializeScrollAnimations() {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        console.log(entry)
         entry.target.classList.add('in-view');
 
-        // Add staggered animation for grid items
-        if (entry.target.parentElement.classList.contains(".anim-grid")) {
+        // Add staggered animation for multiple items
+        if (entry.target.parentElement.classList.contains("anim-grid")) {
+          // console.log("grid check passed")
 
           const siblings = Array.from(entry.target.parentElement.children);
           const index = siblings.indexOf(entry.target);
-          entry.target.style.animationDelay = `${index * 0.1}s`;
+          entry.target.style.transitionDelay = `${index * 1.5}s !important`;
+
+          // console.log("grid set passed")
         }
 
         // Unobserve after animation
@@ -68,6 +96,44 @@ function initializeScrollAnimations() {
   });
 }
 
+const animateElements = document.querySelectorAll(
+    ".anim-left, .anim-right, .anim-up, .anim-down, .anim-blur"
+);
+
+function isInViewport(element, offset = 25) {
+  const rect = element.getBoundingClientRect()
+  return rect.top <= (window.innerHeight || document.documentElement.clientHeight) - offset
+}
+
+function handleScrollAnimations() {
+  animateElements.forEach((element) => {
+    if (isInViewport(element) && !element.classList.contains("in-view")) {
+      element.classList.add("in-view")
+    }
+
+    if (element.parentElement.classList.contains("anim-grid")) {
+      // console.log("grid check passed")
+      const siblings = Array.from(element.parentElement.children);
+      const index = siblings.indexOf(element);
+      // element.classList.add(`delay-${index * 5 + 1}`);
+      element.dataset.delay = `${index * 2 + 1}`;
+      // console.log("grid set passed")
+    }
+
+  })
+  document.querySelectorAll('[data-delay]').forEach((element) => {
+    // let elClassStr = element.classList.toString();
+    // let delayScalar = parseInt(elClassStr.substring(elClassStr.indexOf("delay") + 6))
+    let delayScalar = parseInt(element.dataset.delay);
+
+
+    element.style.transitionDelay = delayScalar * 0.1 + "s";
+    element.style.animationDelay = delayScalar * 0.1 + "s";
+  })
+}
+
+handleScrollAnimations();
+
 const contactNavBtn = document.querySelectorAll('.contact-btn-nav');
 contactNavBtn.forEach(el => {
   el.addEventListener('click', () => {
@@ -76,7 +142,6 @@ contactNavBtn.forEach(el => {
 
   });
 })
-
 
 
 const contactHeroBtn = document.getElementById('contact-btn-hero');
