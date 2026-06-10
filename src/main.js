@@ -48,9 +48,7 @@ function initializeScrollAnimations() {
         entry.target.classList.add('in-view');
 
         // Add staggered animation for grid items
-        if (entry.target.parentElement.classList.contains('projects-grid') ||
-          entry.target.parentElement.classList.contains('testimonials-grid') ||
-          entry.target.parentElement.classList.contains('skills-grid')) {
+        if (entry.target.parentElement.classList.contains(".anim-grid")) {
 
           const siblings = Array.from(entry.target.parentElement.children);
           const index = siblings.indexOf(entry.target);
