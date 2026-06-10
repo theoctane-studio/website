@@ -48,11 +48,3 @@ mobileMenuCloseBtn.addEventListener('click', () => {
   document.scrollingElement.style.overflow = 'scroll';
 
 })
-
-
-//logo home button
-document.querySelectorAll('.logo').forEach(logo => {
-  logo.addEventListener('click', () => {
-    location.href = '/';
-  })
-})

@@ -23,7 +23,7 @@ window.addEventListener(
         handleScrollAnimations()
     }, 20),
 )
-
+/*
 function initializeScrollAnimations() {
     // Elements to animate on scroll
     const animateElements = document.querySelectorAll(
@@ -66,9 +66,10 @@ function initializeScrollAnimations() {
         observer.observe(element);
     });
 }
+*/
 
 const animateElements = document.querySelectorAll(
-    ".anim-left, .anim-right, .anim-up, .anim-down, .anim-blur"
+    ".anim-left, .anim-right, .anim-up, .anim-down, .anim-blur, .anim-grid"
 );
 
 function isInViewport(element, offset = 25) {
@@ -103,7 +104,8 @@ function handleScrollAnimations() {
     })
 }
 
-handleScrollAnimations();
+document.addEventListener("DOMContentLoaded", handleScrollAnimations);
+// handleScrollAnimations();
 
 // window.onbeforeunload = () => {
 //     document.querySelectorAll('.in-view').forEach((child) => {
@@ -114,26 +116,54 @@ handleScrollAnimations();
 
 //link + btn handlers
 
-var navLinks = document.querySelectorAll("a")
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
+
+// const mainContainer = document.querySelector('main');
+
+mobileMenuBtn.addEventListener('click', () => {
+
+    mobileMenu.style.display = 'flex';
+    document.scrollingElement.style.overflow = 'hidden';
+
+});
+
+mobileMenuCloseBtn.addEventListener('click', () => {
+
+    mobileMenu.style.display = 'none';
+    document.scrollingElement.style.overflow = 'scroll';
+
+})
+
+let navLinks = document.querySelectorAll("a")
 navLinks.forEach(item => {
     item.addEventListener('click', (e) => {
         e.preventDefault();
         document.querySelectorAll('.in-view').forEach((child) => {
             child.classList.remove('in-view');
             child.classList.add("out-view");
+
+            mobileMenu.style.display = 'none';
+            document.scrollingElement.style.overflow = 'scroll';
         })
         setTimeout(() => {
             location.href = item.href;
+
         }, 1500)
     });
 })
 
 const contactNavBtn = document.querySelectorAll('.contact-btn-nav');
 contactNavBtn.forEach(el => {
+    if (!el) return
     el.addEventListener('click', () => {
         document.querySelectorAll('.in-view').forEach((child) => {
             child.classList.remove('in-view');
             child.classList.add("out-view");
+
+            mobileMenu.style.display = 'none';
+            document.scrollingElement.style.overflow = 'scroll';
         })
         setTimeout(() => {
             location.href = '/contact.html';
@@ -144,42 +174,54 @@ contactNavBtn.forEach(el => {
 const contactHeroBtn = document.getElementById('contact-btn-hero');
 const workHeroBtn = document.getElementById('work-btn-hero');
 
-contactHeroBtn.addEventListener('click', () => {
+if (contactHeroBtn) {
+    contactHeroBtn.addEventListener('click', () => {
 
-    document.querySelectorAll('.in-view').forEach((child) => {
-        child.classList.remove('in-view');
-        child.classList.add("out-view");
-    })
-    setTimeout(() => {
-        location.href = '/contact.html';
-    }, 1500)
+        document.querySelectorAll('.in-view').forEach((child) => {
+            child.classList.remove('in-view');
+            child.classList.add("out-view");
+        })
+        setTimeout(() => {
+            location.href = '/contact.html';
+        }, 1500)
 
-});
+    });
+}
 
-workHeroBtn.addEventListener('click', () => {
+if (workHeroBtn) {
+    workHeroBtn.addEventListener('click', () => {
 
-    document.querySelectorAll('.in-view').forEach((child) => {
-        child.classList.remove('in-view');
-        child.classList.add("out-view");
-    })
-    setTimeout(() => {
-        location.href = '/work.html';
-    }, 1500)
+        document.querySelectorAll('.in-view').forEach((child) => {
+            child.classList.remove('in-view');
+            child.classList.add("out-view");
 
-});
+            mobileMenu.style.display = 'none';
+            document.scrollingElement.style.overflow = 'scroll';
+        })
+        setTimeout(() => {
+            location.href = '/work.html';
+        }, 1500)
+
+    });
+}
 
 const contactCTABtn = document.getElementById('contact-btn-cta');
-contactCTABtn.addEventListener('click', () => {
+if (contactCTABtn) {
+    contactCTABtn.addEventListener('click', () => {
 
-    document.querySelectorAll('.in-view').forEach((child) => {
-        child.classList.remove('in-view');
-        child.classList.add("out-view");
+        document.querySelectorAll('.in-view').forEach((child) => {
+            child.classList.remove('in-view');
+            child.classList.add("out-view");
+
+            mobileMenu.style.display = 'none';
+            document.scrollingElement.style.overflow = 'scroll';
+        })
+        setTimeout(() => {
+            location.href = '/contact.html';
+        }, 1500)
+
     })
-    setTimeout(() => {
-        location.href = '/contact.html';
-    }, 1500)
-
-})
+}
 
 //logo home button
 document.querySelectorAll('.logo').forEach(logo => {
@@ -187,6 +229,9 @@ document.querySelectorAll('.logo').forEach(logo => {
         document.querySelectorAll('.in-view').forEach((child) => {
             child.classList.remove('in-view');
             child.classList.add("out-view");
+
+            mobileMenu.style.display = 'none';
+            document.scrollingElement.style.overflow = 'scroll';
         })
         setTimeout(() => {
             location.href = '/';
