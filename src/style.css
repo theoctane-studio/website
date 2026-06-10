@@ -227,7 +227,7 @@ main .hero .container .window {
 main .hero .container .window::after {
   content: "";
   position: absolute;
-  bottom: -15%;
+  bottom: -35vh;
   left: 50%;
   transform: translateX(-50%);
   width: 70%;
@@ -242,7 +242,8 @@ main .hero .container .window::after {
   filter: blur(6px);
 }
 
-main .hero .container .window img {
+main .hero .container .window img,
+main .hero .container .window video {
   width: 100%;
   border-radius: 4px;
 }
@@ -1753,6 +1754,10 @@ so this is what its gonna be since it works */
   main .process .container {
     margin-bottom: 64px;
   }
+  
+  main .hero .container .window::after {
+    bottom: -10vh;
+  }
 
   main .process .container .content {
     flex-direction: column;
@@ -1788,6 +1793,10 @@ so this is what its gonna be since it works */
 
   main .hero .container .window {
     margin-bottom: 96px;
+  }
+  
+  main .hero .container .window::after {
+    bottom: -23vh;
   }
 
   main .services .container {
