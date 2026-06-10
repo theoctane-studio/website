@@ -168,6 +168,80 @@ nav .container .links #mobile-menu-btn {
   display: none;
 }
 
+/*MODAL*/
+/* Trigger button styling */
+.open-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 1. The Modal Backdrop (Darkened & Blurred) */
+.modal {
+  display: flex; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Darkened overlay */
+  backdrop-filter: blur(10px);           /* Blurred background effect */
+  z-index: -9999;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+
+/* Class to show the modal via JavaScript */
+.modal.is-active {
+  z-index: 9999;
+  opacity: 1;
+}
+
+/* 2. Modal Content Wrapper */
+.modal-content {
+  position: relative;
+  max-width: 85%;
+  max-height: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centered Image Styling */
+.modal-content img,
+.modal-content video {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content video:hover, .modal-content video:active {
+  cursor: pointer;
+}
+
+/* 3. Exit Button */
+.close-btn {
+  position: absolute;
+  top: -45px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #ddd;
+}
+
 main {
   width: 100%;
   margin-top: 84px;
@@ -246,6 +320,12 @@ main .hero .container .window img,
 main .hero .container .window video {
   width: 100%;
   border-radius: 4px;
+  transition: var(--default-ease);
+}
+
+main .hero .container .window video:hover {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+  cursor: pointer;
 }
 
 main .services .container {

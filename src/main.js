@@ -129,3 +129,41 @@ document.querySelectorAll('.logo').forEach(logo => {
     location.href = '/';
   })
 })
+
+//modal popup
+const modal = document.getElementById('imgModal');
+const triggerBtn = document.querySelectorAll('main section.hero .container .window video');
+const closeBtn = document.getElementById('closeBtn');
+// const popupImage = document.getElementById('popupImage');
+const popupVideo = document.getElementById('popupVideo');
+
+// Open the modal
+
+// triggerBtns1.forEach(btn => {
+//     btn.addEventListener('click', () => {
+//         modal.classList.add('is-active');
+//         popupImage.src = btn.dataset.img;
+//     });
+// })
+
+triggerBtn.forEach(btn => {
+  btn.addEventListener('click', () => {
+    modal.classList.add('is-active');
+    // popupImage.src = btn.firstElementChild.src;
+    popupVideo.play()
+  })
+})
+
+// Close the modal via the 'X' button
+closeBtn.addEventListener('click', () => {
+  modal.classList.remove('is-active');
+  popupVideo.pause()
+});
+
+// Close the modal if the user clicks anywhere on the darkened backdrop
+modal.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.classList.remove('is-active');
+    popupVideo.pause()
+  }
+});
