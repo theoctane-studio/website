@@ -5,7 +5,7 @@
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./src/style.css" />
-    <title>Octane - Web Design & Development Agency</title>
+    <link rel="stylesheet" type="text/css" href="./src/anims.css" />
     <link
       rel="shortcut icon"
       href="/octane_trig.png"
@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <nav>
+    <nav class="anim-down">
       <div class="container anim-grid">
         <img class="logo anim-left" src="/Octane Wordmark Transparent.png" alt="" draggable="false" />
         <ul class="links anim-left anim-grid">
@@ -48,9 +48,9 @@
           <a class="anim-left" href="/services.html">Services</a>
           <a class="anim-left" href="/process.html">Our Process</a>
           <a class="anim-left" href="/about.html">About</a>
-          <hr />
-          <button class="filled-btn contact-btn-nav">Let's chat</button>
-          <i id="mobile-menu-btn" class="ph ph-list"></i>
+          <hr class="anim-left" />
+          <button class="filled-btn contact-btn-nav anim-left anim-blur">Let's chat</button>
+          <i id="mobile-menu-btn" class="ph ph-list anim-left"></i>
         </ul>
       </div>
     </nav>
@@ -140,8 +140,8 @@
         </div>
       </section>
       <section class="process">
-        <div class="container">
-          <h2>From concept to launch</h2>
+        <div class="container anim-grid">
+          <h2 class="anim-blur anim-left">From concept to launch</h2>
 
           <div class="content anim-grid">
             <div class="timeline-block anim-left anim-blur">
@@ -203,8 +203,8 @@
         </div>
       </section>
       <section class="faq">
-        <div class="container">
-          <h2>Got questions? We have answers.</h2>
+        <div class="container anim-grid">
+          <h2 class="anim-left anim-blur">Got questions? We have answers.</h2>
           <div class="dropdowns">
             <ul class="anim-grid">
               <li class="anim-left anim-blur">
@@ -268,7 +268,7 @@
       <div class="cta">
         <div class="container anim-grid">
           <h1 class="anim-up anim-blur">Building for the future.<br>Available <span class="keyword">today</span>.</h1>
-          <button class="filled-btn anim-up anim-blur" id="contact-btn-cta">Let's get started</button>
+          <button class="filled-btn anim-up" id="contact-btn-cta">Let's get started</button>
         </div>
       </div>
       
@@ -382,6 +382,7 @@
         </div>
       </footer>
 
+    <script type="module" src="/src/anims.js"></script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

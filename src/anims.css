@@ -1,0 +1,157 @@
+
+.anim-left, .anim-right, .anim-up, .anim-down, .anim-blur {
+	transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+	/*transition: all;*/
+	animation-duration: 1s;
+	animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0 !important;
+		filter: blur(16px) brightness(0.5) !important;
+	}
+}
+
+@keyframes fadeUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeDown {
+	from {
+		opacity: 0;
+		transform: translateY(-30px);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeLeft {
+	from {
+		opacity: 0;
+		transform: translateX(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeRight {
+	from {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes scaleIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes blurIn {
+	from {
+		opacity: 0;
+		filter: blur(20px) brightness(30%);
+	}
+	
+	to {
+		opacity: 1;
+		filter: blur(0px) brightness(100%);
+	}
+}
+
+.anim-left {
+	/*animation: fadeRight 1s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;*/
+	opacity: 0;
+	/*animation: fadeRight 1s cubic-bezier(0.2, 0.8, 0.2, 1);*/
+	
+}
+.anim-left.in-view {
+	opacity: 1;
+	animation: fadeRight 1s cubic-bezier(0.2, 0.8, 0.2, 1) backwards
+}
+.anim-left.out-view {
+	opacity: 0;
+	animation: fadeRight 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+
+.anim-right {
+	opacity: 0;
+	/*transform: translateX(10%);*/
+	animation: fadeLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1)
+}
+.anim-right.in-view {
+	opacity: 1;
+	/*transform: translateX(0%);*/
+	animation: fadeLeft 1s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+.anim-up {
+	opacity: 0;
+	/*transform: translateY(10%);*/
+}
+.anim-up.in-view {
+	opacity: 1;
+	/*transform: translateY(0%);*/
+	animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+.anim-up.out-view {
+	opacity: 0;
+	animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.anim-down {
+	opacity: 0;
+	/*animation: fadeDown 1s cubic-bezier(0.2, 0.8, 0.2, 1)*/
+}
+.anim-down.in-view {
+	opacity: 1;
+	animation: fadeDown 1s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+.anim-down.out-view {
+	opacity: 0;
+	animation: fadeDown 1s cubic-bezier(0.2, 0.8, 0.2, 1)
+}
+
+.anim-blur {
+	opacity: 0;
+	filter: blur(20px) brightness(30%);
+	transition: all 1s;
+}
+.anim-blur.in-view {
+	opacity: 1;
+	filter: blur(0px) brightness(100%);
+}

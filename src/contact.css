@@ -13,6 +13,24 @@ main section.hero .container .window {
 	overflow: visible;
 }
 
+main .hero .container .window::after {
+	content: "";
+	position: absolute;
+	bottom: -15% !important;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 70%;
+	height: 20px;
+	
+	background: radial-gradient(
+					ellipse at center,
+					rgba(0, 0, 0, 0.25),
+					rgba(0, 0, 0, 0) 70%
+	);
+	
+	filter: blur(6px);
+}
+
 
 main section.hero .container .window img {
 	object-fit: cover;

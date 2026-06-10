@@ -1,20 +1,20 @@
 import { app as firebase } from './firebase-config.js';
-
-const contactCTABtn = document.getElementById('contact-btn-cta');
-contactCTABtn.addEventListener('click', () => {
-
-  location.href = '/contact.html';
-
-})
-
-const contactNavBtn = document.querySelectorAll('.contact-btn-nav');
-contactNavBtn.forEach(el => {
-  el.addEventListener('click', () => {
-
-    location.href = '/contact.html';
-
-  });
-})
+//
+// const contactCTABtn = document.getElementById('contact-btn-cta');
+// contactCTABtn.addEventListener('click', () => {
+//
+//   location.href = '/contact.html';
+//
+// })
+//
+// const contactNavBtn = document.querySelectorAll('.contact-btn-nav');
+// contactNavBtn.forEach(el => {
+//   el.addEventListener('click', () => {
+//
+//     location.href = '/contact.html';
+//
+//   });
+// })
 
 const mobileMenu = document.getElementById('mobile-menu');
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -36,10 +36,10 @@ mobileMenuCloseBtn.addEventListener('click', () => {
 
 })
 
-
-//logo home button
-document.querySelectorAll('.logo').forEach(logo => {
-  logo.addEventListener('click', () => {
-    location.href = '/';
-  })
-})
+//
+// //logo home button
+// document.querySelectorAll('.logo').forEach(logo => {
+//   logo.addEventListener('click', () => {
+//     location.href = '/';
+//   })
+// })
