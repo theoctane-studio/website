@@ -1,4 +1,4 @@
-import { app as firebase } from './firebase-config.js';
+import { app as firebase } from '../firebase-config.js';
 
 let coll = document.getElementsByClassName("collapsible");
 

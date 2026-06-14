@@ -1,12 +1,10 @@
-import { app as firebase } from './firebase-config.js';
+import { app as firebase } from '../firebase-config.js';
 //
-// const contactCTABtn = document.querySelectorAll('.contact-btn-cta');
-// contactCTABtn.forEach(el => {
-//   el.addEventListener('click', () => {
+// const contactCTABtn = document.getElementById('contact-btn-cta');
+// contactCTABtn.addEventListener('click', () => {
 //
-//     location.href = '/contact.html';
+//   location.href = '/contact.html';
 //
-//   })
 // })
 //
 // const contactNavBtn = document.querySelectorAll('.contact-btn-nav');
@@ -17,17 +15,6 @@ import { app as firebase } from './firebase-config.js';
 //
 //   });
 // })
-
-const viewWorkBtn = document.querySelector("section.hero .container .call-to-action .filled-btn.view-work-cta");
-viewWorkBtn.addEventListener('click', () => {
-  document.querySelectorAll('.in-view').forEach((child) => {
-            child.classList.remove('in-view');
-            child.classList.add("out-view");
-        })
-        setTimeout(() => {
-            location.href = '/work.html';
-        }, 1500)
-})
 
 const mobileMenu = document.getElementById('mobile-menu');
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -48,3 +35,11 @@ mobileMenuCloseBtn.addEventListener('click', () => {
   document.scrollingElement.style.overflow = 'scroll';
 
 })
+
+//
+// //logo home button
+// document.querySelectorAll('.logo').forEach(logo => {
+//   logo.addEventListener('click', () => {
+//     location.href = '/';
+//   })
+// })
