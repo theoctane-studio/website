@@ -185,3 +185,17 @@ modal.addEventListener('click', (event) => {
     popupVideo.pause()
   }
 });
+
+const testimonialLogos = document.querySelectorAll('section.testimonials .container .logos img');
+
+testimonialLogos.forEach(logo => {
+  logo.addEventListener('click', () => {
+    //use dataset to determine href
+    try {
+      window.open(logo.dataset.href, '_blank');
+    } catch (e) {
+      console.log(e)
+      location.href = logo.dataset.href;
+    }
+  })
+})

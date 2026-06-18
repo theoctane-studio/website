@@ -72,40 +72,48 @@ const animateElements = document.querySelectorAll(
     ".anim-left, .anim-right, .anim-up, .anim-down, .anim-blur, .anim-grid"
 );
 
+//check via bounding box if elem in view?
 function isInViewport(element, offset = 25) {
     const rect = element.getBoundingClientRect()
     return rect.top <= (window.innerHeight || document.documentElement.clientHeight) - offset
 }
 
+//goofy ahh scroll handling func dont ask wtf this does
 function handleScrollAnimations() {
+
     animateElements.forEach((element) => {
+        //check if in viewport, add tag
         if (isInViewport(element) && !element.classList.contains("in-view")) {
             element.classList.add("in-view")
         }
 
+        //grid elems stagger
         if (element.parentElement.classList.contains("anim-grid")) {
-            // console.log("grid check passed")
+
+            //delay based on sibling index
             const siblings = Array.from(element.parentElement.children);
             const index = siblings.indexOf(element);
             // element.classList.add(`delay-${index * 5 + 1}`);
             element.dataset.delay = `${index * 2 + 1}`;
             // console.log("grid set passed")
         }
-
     })
+
+    //check datasets for delayed elements, those receive a time scalar for trans + anim delay
     document.querySelectorAll('[data-delay]').forEach((element) => {
         // let elClassStr = element.classList.toString();
         // let delayScalar = parseInt(elClassStr.substring(elClassStr.indexOf("delay") + 6))
         let delayScalar = parseInt(element.dataset.delay);
 
-
+        //data-delay="1" --> 0.1s delay, etc.
         element.style.transitionDelay = delayScalar * 0.1 + "s";
         element.style.animationDelay = delayScalar * 0.1 + "s";
     })
 }
 
+//call handling ev
 document.addEventListener("DOMContentLoaded", handleScrollAnimations);
-// handleScrollAnimations();
+// handleScrollAnimations(); -- dble call unnecessary
 
 // window.onbeforeunload = () => {
 //     document.querySelectorAll('.in-view').forEach((child) => {
@@ -115,42 +123,27 @@ document.addEventListener("DOMContentLoaded", handleScrollAnimations);
 
 
 //link + btn handlers
-
 const mobileMenu = document.getElementById('mobile-menu');
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
 
-// const mainContainer = document.querySelector('main');
-
+//hide or show mobile menu
 mobileMenuBtn.addEventListener('click', () => {
-
     mobileMenu.style.display = 'flex';
     document.scrollingElement.style.overflow = 'hidden';
-
 });
 
 mobileMenuCloseBtn.addEventListener('click', () => {
-
     mobileMenu.style.display = 'none';
     document.scrollingElement.style.overflow = 'scroll';
-
 })
 
+//change handling of some default links and btns to avoid conflict
 let navLinks = document.querySelectorAll("a")
 navLinks.forEach(item => {
     item.addEventListener('click', (e) => {
         e.preventDefault();
-        document.querySelectorAll('.in-view').forEach((child) => {
-            child.classList.remove('in-view');
-            child.classList.add("out-view");
-
-            mobileMenu.style.display = 'none';
-            document.scrollingElement.style.overflow = 'scroll';
-        })
-        setTimeout(() => {
-            location.href = item.href;
-
-        }, 1500)
+        unloadPageAndNavigateTo(item.href.toString())
     });
 })
 
@@ -158,16 +151,7 @@ const contactNavBtn = document.querySelectorAll('.contact-btn-nav');
 contactNavBtn.forEach(el => {
     if (!el) return
     el.addEventListener('click', () => {
-        document.querySelectorAll('.in-view').forEach((child) => {
-            child.classList.remove('in-view');
-            child.classList.add("out-view");
-
-            mobileMenu.style.display = 'none';
-            document.scrollingElement.style.overflow = 'scroll';
-        })
-        setTimeout(() => {
-            location.href = '/contact.html';
-        }, 1500)
+        unloadPageAndNavigateTo("/contact.html");
     });
 })
 
@@ -176,65 +160,54 @@ const workHeroBtn = document.getElementById('work-btn-hero');
 
 if (contactHeroBtn) {
     contactHeroBtn.addEventListener('click', () => {
-
-        document.querySelectorAll('.in-view').forEach((child) => {
-            child.classList.remove('in-view');
-            child.classList.add("out-view");
-        })
-        setTimeout(() => {
-            location.href = '/contact.html';
-        }, 1500)
-
+        unloadPageAndNavigateTo("/contact.html")
     });
 }
 
-if (workHeroBtn) {
+if (workHeroBtn) { //ts conditioning avoids anim bugs
     workHeroBtn.addEventListener('click', () => {
-
-        document.querySelectorAll('.in-view').forEach((child) => {
-            child.classList.remove('in-view');
-            child.classList.add("out-view");
-
-            mobileMenu.style.display = 'none';
-            document.scrollingElement.style.overflow = 'scroll';
-        })
-        setTimeout(() => {
-            location.href = '/work.html';
-        }, 1500)
-
+        unloadPageAndNavigateTo('/work.html')
     });
 }
 
 const contactCTABtn = document.getElementById('contact-btn-cta');
 if (contactCTABtn) {
     contactCTABtn.addEventListener('click', () => {
-
-        document.querySelectorAll('.in-view').forEach((child) => {
-            child.classList.remove('in-view');
-            child.classList.add("out-view");
-
-            mobileMenu.style.display = 'none';
-            document.scrollingElement.style.overflow = 'scroll';
-        })
-        setTimeout(() => {
-            location.href = '/contact.html';
-        }, 1500)
-
+        unloadPageAndNavigateTo('/contact.html')
     })
 }
 
-//logo home button
+const viewWorkBtn = document.querySelector("section.hero .container .call-to-action .filled-btn.view-work-cta");
+if (viewWorkBtn) {
+    viewWorkBtn.addEventListener('click', () => {
+        unloadPageAndNavigateTo('/work.html')
+    })
+}
+
+
+
+
+//octane logo home button
 document.querySelectorAll('.logo').forEach(logo => {
     logo.addEventListener('click', () => {
-        document.querySelectorAll('.in-view').forEach((child) => {
-            child.classList.remove('in-view');
-            child.classList.add("out-view");
-
-            mobileMenu.style.display = 'none';
-            document.scrollingElement.style.overflow = 'scroll';
-        })
-        setTimeout(() => {
-            location.href = '/';
-        }, 1500)
+        unloadPageAndNavigateTo("/")
     })
 })
+
+/**
+ * Triggers unload animations and changes DOM HREF to desired route.
+ * @param relativePath {string} home directory path of the relative routed page
+ * @param timeout {number} time in ms to delay reroute, compensating for animation
+ */
+function unloadPageAndNavigateTo(relativePath, timeout= 1500) {
+    document.querySelectorAll('.in-view').forEach((child) => {
+        child.classList.remove('in-view');
+        child.classList.add("out-view");
+
+        mobileMenu.style.display = 'none';
+        document.scrollingElement.style.overflow = 'scroll';
+    })
+    setTimeout(() => {
+        location.href = relativePath;
+    }, timeout)
+}

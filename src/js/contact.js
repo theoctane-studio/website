@@ -1,21 +1,4 @@
 
-
-// const contactNavBtn = document.querySelectorAll('.contact-btn-nav');
-// contactNavBtn.forEach(el => {
-//     el.addEventListener('click', () => {
-//
-//         location.href = '/contact.html';
-//
-//     });
-// })
-//
-// //logo home button
-// document.querySelectorAll('.logo').forEach(logo => {
-//     logo.addEventListener('click', () => {
-//         location.href = '/';
-//     })
-// })
-
 const bars = document.querySelectorAll("main section.hero .container .window svg g");
 
 bars.forEach((bar, i) => {
@@ -32,16 +15,3 @@ bars.forEach((bar, i) => {
         bar.style.transform = "translateY(0px) scaleY(1)";
     });
 });
-
-//logo home button
-document.querySelectorAll('.logo').forEach(logo => {
-    logo.addEventListener('click', () => {
-        document.querySelectorAll('.in-view').forEach((child) => {
-            child.classList.remove('in-view');
-            child.classList.add("out-view");
-        })
-        setTimeout(() => {
-            location.href = '/';
-        }, 1500)
-    })
-})

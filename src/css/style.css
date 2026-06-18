@@ -428,18 +428,26 @@ main .testimonials .container .logos {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  column-gap: 32px;
   width: 100%;
   margin-bottom: 128px;
 }
 
 main .testimonials .container .logos img {
   height: 64px;
-  opacity: 66.7%;
-  transition: var(--default-ease);
+  /*opacity: 66.7%; -- messes w anim */
+  filter: brightness(0.667);
+  transition: var(--default-ease), filter 0.3s ease !important;
+}
+
+main .testimonials .container .logos img:last-child { /*corti logo bc wider and fatter for some reason*/
+  /*transform: scale(0.85) -- messes w anims*/
+  height: 50px;
 }
 
 main .testimonials .container .logos img:hover {
-  opacity: 75%;
+  /*opacity: 75%;*/
+  filter: brightness(0.85);
 }
 
 main .testimonials .container .buttons {
@@ -475,12 +483,13 @@ main .process .container .content {
   display: flex;
 }
 
-/* main .process .container .content .timeline-block {
-
+main .process .container .content .timeline-block {
+  min-width: 180px;
+  max-width: 200px;
 }
 
-main .process .container .content .timeline-block:hover {
-} */
+/*main .process .container .content .timeline-block:hover {*/
+/*} */
 
 main .process .container .content .timeline-block .line-box {
   display: flex;
@@ -1826,6 +1835,18 @@ so this is what its gonna be since it works */
 
   main .process .container {
     margin-bottom: 64px;
+  }
+  
+  main .process .container .content .timeline-block .text {
+    margin-bottom: 32px;
+  }
+  
+  main .process .container .content .timeline-block .text h4 {
+    margin-top: 12px;
+  }
+  
+  main .process .container .content .timeline-block .text p {
+    padding-top: 4px;
   }
   
   main .hero .container .window::after {
