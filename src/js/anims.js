@@ -199,15 +199,34 @@ document.querySelectorAll('.logo').forEach(logo => {
  * @param relativePath {string} home directory path of the relative routed page
  * @param timeout {number} time in ms to delay reroute, compensating for animation
  */
-function unloadPageAndNavigateTo(relativePath, timeout= 1500) {
-    document.querySelectorAll('.in-view').forEach((child) => {
+function unloadPageAndNavigateTo(relativePath, timeout= 1750) {
+    const elsInView = document.querySelectorAll('.in-view')
+    const elsArray = Array.from(elsInView)
+
+    elsInView.forEach((child) => {
         child.classList.remove('in-view');
         child.classList.add("out-view");
 
         mobileMenu.style.display = 'none';
         document.scrollingElement.style.overflow = 'scroll';
     })
-    setTimeout(() => {
-        location.href = relativePath;
-    }, timeout)
+
+    //using dynamic timing to create smoother animation
+    if (elsArray[elsArray.length - 1].classList.contains('anim-grid')) {
+        setTimeout(() => {
+            location.href = relativePath;
+        }, timeout)
+    } else {
+        // elsArray[elsArray.length - 1].addEventListener("transitionstart", () => {
+        //     console.log("tran start")
+        // })
+        elsArray[elsArray.length - 1].addEventListener('transitionend', () => {
+            // console.log("tran end")
+            location.href = relativePath;
+            // setTimeout(() => { location.href = relativePath; }, 4000);
+        }, { once: true });
+    }
+
+
+
 }
