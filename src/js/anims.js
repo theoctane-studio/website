@@ -129,12 +129,14 @@ const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
 
 //hide or show mobile menu
 mobileMenuBtn.addEventListener('click', () => {
-    mobileMenu.style.display = 'flex';
+    // mobileMenu.style.display = 'flex';
+    mobileMenu.classList.add('active');
     document.scrollingElement.style.overflow = 'hidden';
 });
 
 mobileMenuCloseBtn.addEventListener('click', () => {
-    mobileMenu.style.display = 'none';
+    // mobileMenu.style.display = 'none';
+    mobileMenu.classList.remove('active');
     document.scrollingElement.style.overflow = 'scroll';
 })
 
@@ -207,7 +209,8 @@ function unloadPageAndNavigateTo(relativePath, timeout= 1750) {
         child.classList.remove('in-view');
         child.classList.add("out-view");
 
-        mobileMenu.style.display = 'none';
+        // mobileMenu.style.display = 'none';
+        mobileMenu.classList.remove('active');
         document.scrollingElement.style.overflow = 'scroll';
     })
 
