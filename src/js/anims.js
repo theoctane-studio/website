@@ -200,7 +200,7 @@ document.querySelectorAll('.logo').forEach(logo => {
  * @param timeout {number} time in ms to delay reroute, compensating for animation
  */
 function unloadPageAndNavigateTo(relativePath, timeout= 1750) {
-    const elsInView = document.querySelectorAll('.in-view')
+    const elsInView = document.querySelectorAll('.in-view:not(.anim-grid,g)')
     const elsArray = Array.from(elsInView)
 
     elsInView.forEach((child) => {
@@ -225,6 +225,16 @@ function unloadPageAndNavigateTo(relativePath, timeout= 1750) {
             location.href = relativePath;
             // setTimeout(() => { location.href = relativePath; }, 4000);
         }, { once: true });
+
+        // elsArray[elsArray.length - 1].addEventListener('animationend', () => {
+        //     // console.log("tran end")
+        //     location.href = relativePath;
+        //     // setTimeout(() => { location.href = relativePath; }, 4000);
+        // }, { once: true });
+        //
+        // setTimeout(() => {
+        //     location.href = relativePath;
+        // }, 3500)
     }
 
 

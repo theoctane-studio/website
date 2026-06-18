@@ -431,6 +431,7 @@ main .testimonials .container .logos {
   column-gap: 32px;
   width: 100%;
   margin-bottom: 128px;
+  flex-wrap: wrap;
 }
 
 main .testimonials .container .logos img {
@@ -445,9 +446,11 @@ main .testimonials .container .logos img:last-child { /*corti logo bc wider and 
   height: 50px;
 }
 
-main .testimonials .container .logos img:hover {
+main .testimonials .container .logos img:hover,
+main .testimonials .container .logos img:active {
   /*opacity: 75%;*/
   filter: brightness(0.85);
+  cursor: pointer;
 }
 
 main .testimonials .container .buttons {
@@ -948,10 +951,16 @@ so this is what its gonna be since it works */
 
   main .testimonials .container .logos {
     margin-bottom: 64px;
+    flex-direction: column;
   }
 
   main .testimonials .container .logos img {
-    height: 32px;
+    height: 44px !important;
+    margin-bottom: 16px;
+  }
+  
+  main .testimonials .container .logos img:last-child {
+    height: 38px !important;
   }
 
   main .process .container {
@@ -1187,10 +1196,17 @@ so this is what its gonna be since it works */
 
   main .testimonials .container .logos {
     margin-bottom: 64px;
+    flex-wrap: wrap;
+    flex-direction: column;
   }
 
   main .testimonials .container .logos img {
-    height: 32px;
+    height: 48px !important;
+    margin-bottom: 16px;
+  }
+  
+  main .testimonials .container .logos img:last-child {
+    height: 42px !important;
   }
 
   main .process .container {
@@ -1427,10 +1443,16 @@ so this is what its gonna be since it works */
 
   main .testimonials .container .logos {
     margin-bottom: 64px;
+    flex-direction: column;
   }
 
   main .testimonials .container .logos img {
-    height: 32px;
+    height: 64px !important;
+    margin-bottom: 16px;
+  }
+  
+  main .testimonials .container .logos img:last-child {
+    height: 58px !important;
   }
 
   main .process .container {
@@ -1669,9 +1691,13 @@ so this is what its gonna be since it works */
   }
 
   main .testimonials .container .logos img {
-    height: 32px;
+    height: 48px !important;
   }
-
+  
+  main .testimonials .container .logos img:last-child {
+    height: 42px !important;
+  }
+  
   main .process .container {
     margin-top: 64px;
     margin-bottom: 0;
