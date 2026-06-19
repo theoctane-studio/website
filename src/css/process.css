@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 
+/*inline import as opposed to html allows precedence to remain in correct order*/
+@import url("style.css");
+
+
 @font-face {
   font-family: 'GoodTimes';
   src: url('../font/good_times_font.ttf') format('truetype');
@@ -310,16 +314,18 @@ main .process .container .timeline-block .step {
   width: fit-content;
   height: fit-content;
   grid-column: 1 / 2;
+  
   color: white;
-  writing-mode: vertical-lr;
-  font-size: clamp(14px, 10vw, 96px);
-  background: -webkit-linear-gradient(180deg, #999, #fff, #aaa, #000);
-  filter: drop-shadow(10px 0 16px rgba(255, 255, 255, 0.01)) brightness(.65);
+  background: linear-gradient(-90deg, #999, #fff, #aaa, #000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  
   font-weight: 800;
   font-family: "GoodTimes", "Good Times", "Geist", sans-serif;
+  writing-mode: vertical-lr;
+  font-size: clamp(14px, 10vw, 96px);
   transition: var(--default-ease-in-out);
+  filter: drop-shadow(10px 0 16px rgba(255, 255, 255, 0.01)) brightness(.65);
 }
 
 main .process .container .timeline-block:hover .step,
