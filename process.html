@@ -1,71 +1,344 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="src/css/process.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="./src/style.css" /> -->
-    <title>Our Process - Octane</title>
-    <link
-      rel="shortcut icon"
-      href="/octane_trig.png"
-      type="image/x-icon"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
-    />
+	<meta charset="UTF-8" />
+	<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--	TODO: enable anims!-->
+	<link rel="stylesheet" type="text/css" href="src/css/anims.css" />
+	<link rel="stylesheet" type="text/css" href="src/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="src/css/process.css" />
+	<title>Our Process - Octane</title>
+	<link
+					rel="shortcut icon"
+					href="/octane_trig.png"
+					type="image/x-icon"
+	/>
+	<link
+					rel="stylesheet"
+					type="text/css"
+					href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+	/>
 </head>
 <body>
 
-    <div id="mobile-menu">
-      <nav>
-        <div class="container">
-          <img class="logo" src="/Octane Wordmark Transparent.png" alt="" draggable="false" />
-          <ul class="links">
-            <button class="filled-btn contact-btn-nav">Let's chat</button>
-            <i id="mobile-menu-close-btn" class="ph ph-x"></i>
-          </ul>
-        </div>
-      </nav>
-      <div class="content">
-        <ul>
-          <h3>What are you looking for?</h3>
-          <a href="/work.html">Work</a>
-          <a href="/services.html">Services</a>
-          <a href="/process.html">Our Process</a>
-          <a href="/about.html">About</a>
-        </ul>
-      </div>
-    </div>
+<div id="mobile-menu">
+	<nav>
+		<div class="container">
+			<img class="logo" src="/Octane Wordmark Transparent.png" alt="" draggable="false" />
+			<ul class="links">
+				<button class="filled-btn contact-btn-nav">Let's chat</button>
+				<i id="mobile-menu-close-btn" class="ph ph-x"></i>
+			</ul>
+		</div>
+	</nav>
+	<div class="content">
+		<ul>
+			<h3>What are you looking for?</h3>
+			<a href="/work.html">Work</a>
+			<a href="/services.html">Services</a>
+			<a href="/process.html">Our Process</a>
+			<a href="/about.html">About</a>
+		</ul>
+	</div>
+</div>
 
-    <nav>
-      <div class="container">
-        <img class="logo" src="/Octane Wordmark Transparent.png" alt="" draggable="false" />
-        <ul class="links">
-          <a href="/work.html">Work</a>
-          <a href="/services.html">Services</a>
-          <a href="/process.html">Our Process</a>
-          <a href="/about.html">About</a>
-          <hr />
-          <button class="filled-btn contact-btn-nav">Let's chat</button>
-          <i id="mobile-menu-btn" class="ph ph-list"></i>
-        </ul>
-      </div>
-    </nav>
+<nav class="anim-down">
+	<div class="container anim-grid">
+		<img class="logo anim-left" src="/Octane Wordmark Transparent.png" alt="" draggable="false" />
+		<ul class="links anim-left anim-grid">
+			<a class="anim-left" href="/work.html">Work</a>
+			<a class="anim-left" href="/services.html">Services</a>
+			<a class="anim-left" href="/process.html">Our Process</a>
+			<a class="anim-left" href="/about.html">About</a>
+			<hr class="anim-left" />
+			<button class="filled-btn contact-btn-nav anim-left anim-blur">Let's chat</button>
+			<i id="mobile-menu-btn" class="ph ph-list anim-left"></i>
+		</ul>
+	</div>
+</nav>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>A structured path from<br>concept to launch</h1>
-                <p>We follow a structured process designed to ensure everything from the initial wireframe to post-launch analytics are a success.</p>
-            </div>
-        </section>
-    </main>
+<main>
+	<section class="hero anim-up anim-blur anim-grid">
+		<div class="container anim-grid">
+			<div class="hero-glow"></div>
+			<h1 class="anim-blur anim-left" >A structured path, from<br>concept to launch</h1>
+			<p class="anim-blur anim-left">We follow a structured process designed to ensure everything from the initial wireframe to post-launch analytics are a success.</p>
+		</div>
+	</section>
+	<section class="process">
+		<div class="container anim-grid">
+			<div class="timeline-block anim-grid anim-left anim-blur">
+					<div class="step anim-down">STEP 1</div>
+				<div class="line-box">
+					<div class="dot"></div>
+					<div class="line"></div>
+				</div>
+				<div class="text anim-grid">
+					<h4 class="anim-left">Discover</h4>
+					<h6 class="anim-left">Understanding the problem before designing the solution.</h6>
+					<p class="anim-left">Every successful website starts with clarity.
+						Before layouts, animations, or development, we focus on understanding your business, your audience, and the goals driving the project.
+						We begin with conversations that uncover what makes your company different, where your current experience falls short, and what success should look like once the new site goes live.
+						Rather than making assumptions, we gather context and establish priorities early, creating a shared understanding that guides every decision moving forward.
+						This phase allows us to align on objectives, identify opportunities, and define the scope before a single line of code is written.</p>
+					<div>
+						<strong>During discovery, we focus on:</strong>
+						<ul class="anim-grid">
+							<li class="anim-left">Business goals and positioning</li>
+							<li class="anim-left">Audience and customer journey</li>
+							<li class="anim-left">Existing pain points and opportunities</li>
+							<li class="anim-left">Competitor and industry research</li>
+							<li class="anim-left">Project requirements and priorities</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 
+			<div class="timeline-block anim-grid anim-left anim-blur">
+				<div class="step anim-down">STEP 2</div>
+				<div class="line-box">
+					<div class="dot"></div>
+					<div class="line"></div>
+				</div>
+				<div class="text">
+					<h4 class="anim-left">Blueprint</h4>
+					<h6 class="anim-left">Turning ideas into a clear plan.</h6>
 
-    <script src="src/js/process.js" type="module"></script>
+					<p class="anim-left">
+						With a strong understanding of the project, we move into structure and strategy.
+						Blueprint is where ideas become tangible. We map user flows, define content hierarchy, and establish the overall experience before development begins.
+						Every page, interaction, and component is considered intentionally to ensure the final product feels cohesive and intuitive.
+						This stage creates a roadmap for the entire project, removing guesswork and reducing friction later in the process.
+						By solving complexity early, we ensure design and development move with clarity and purpose.
+					</p>
+
+					<div>
+						<strong>This phase includes:</strong>
+						<ul class="anim-grid">
+							<li class="anim-left">Site architecture and page structure</li>
+							<li class="anim-left">User flows and navigation systems</li>
+							<li class="anim-left">Wireframes and content planning</li>
+							<li class="anim-left">Technical considerations and integrations</li>
+							<li class="anim-left">Project roadmap and deliverables</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="timeline-block anim-grid anim-left anim-blur">
+				<div class="step anim-down">STEP 3</div>
+				<div class="line-box">
+					<div class="dot"></div>
+					<div class="line"></div>
+				</div>
+				<div class="text">
+					<h4 class="anim-left">Engineer</h4>
+					<h6 class="anim-left">Bringing the experience to life.</h6>
+
+					<p class="anim-left">
+						Once the blueprint is defined, we begin building.
+						Design and development come together to transform structure into a fast, scalable, and polished digital experience.
+						Every interaction is crafted with intention, balancing performance, accessibility, and visual precision.
+						We focus heavily on detail — from micro-interactions to responsiveness across devices — ensuring everything feels seamless in motion and in use.
+						The result is not just a website that looks good, but one that performs reliably and scales cleanly over time.
+					</p>
+
+					<div>
+						<strong>Our engineering process emphasizes:</strong>
+						<ul class="anim-grid">
+							<li class="anim-left">Performance and responsiveness</li>
+							<li class="anim-left">Accessibility and usability</li>
+							<li class="anim-left">Scalable, maintainable code</li>
+							<li class="anim-left">Seamless integrations</li>
+							<li class="anim-left">Quality assurance and testing</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="timeline-block anim-grid anim-left anim-blur">
+				<div class="step anim-down">STEP 4</div>
+				<div class="line-box">
+					<div class="dot"></div>
+					<div class="line"></div>
+				</div>
+				<div class="text">
+					<h4 class="anim-left">Launch</h4>
+					<h6 class="anim-left">Shipping with confidence.</h6>
+
+					<p class="anim-left">
+						Launch is the culmination of everything built before it.
+						Before going live, we rigorously test every part of the experience to ensure reliability across devices, browsers, and environments.
+						We refine performance, check responsiveness, and eliminate inconsistencies so the final product feels complete from day one.
+						When everything meets our standards, we handle deployment carefully to ensure a smooth transition from development to production.
+						The goal is simple — a clean, stable launch without surprises.
+					</p>
+
+					<div>
+						<strong>Before going live, we verify:</strong>
+						<ul class="anim-grid">
+							<li class="anim-left">Performance and loading speeds</li>
+							<li class="anim-left">Responsive behavior across devices</li>
+							<li class="anim-left">Browser compatibility</li>
+							<li class="anim-left">SEO fundamentals</li>
+							<li class="anim-left">Analytics and tracking setup</li>
+							<li class="anim-left">Final quality assurance</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="timeline-block anim-grid anim-left anim-blur">
+				<div class="step anim-down">STEP 5</div>
+				<div class="line-box">
+					<div class="dot"></div>
+					<div class="line"></div>
+				</div>
+				<div class="text">
+					<h4 class="anim-left">Support</h4>
+					<h6 class="anim-left">Beyond launch is where growth begins.</h6>
+
+					<p class="anim-left">
+						After launch, the work doesn’t stop.
+						Websites are living systems that need refinement, updates, and iteration over time.
+						We stay involved to ensure everything continues running smoothly and evolving alongside your business.
+						Whether it’s small improvements, new features, or ongoing maintenance, we’re here to support long-term growth.
+						The goal is not just to ship a website, but to make sure it keeps delivering value long after it goes live.
+					</p>
+
+					<div>
+						<strong>Ongoing support can include:</strong>
+						<ul class="anim-grid">
+							<li class="anim-left">Updates and maintenance</li>
+							<li class="anim-left">Performance monitoring</li>
+							<li class="anim-left">Feature enhancements</li>
+							<li class="anim-left">Content and design improvements</li>
+							<li class="anim-left">Technical guidance and consulting</li>
+							<li class="anim-left">Long-term optimization</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="cta">
+		<div class="container anim-grid">
+			<h1 class="anim-up anim-blur">Building for the future.<br>Available <span class="keyword">today</span>.</h1>
+			<button class="filled-btn anim-up" id="contact-btn-cta">Let's get started</button>
+		</div>
+	</div>
+</main>
+
+<footer class="anim-up anim-blur" role="contentinfo">
+	<div class="container anim-grid">
+		<div class="footer-top anim-grid">
+			<div class="footer-brand anim-grid">
+				<img class="footer-logo anim-left anim-blur" src="/Octane Wordmark No Padding Transparent.png" draggable="false" alt="Octane Wordmark">
+				<ul class="footer-list anim-left anim-blur">
+					<li>
+						<a
+										target="_blank"
+										href="mailto:dev.theoctanestudio@gmail.com"
+						>dev.theoctanestudio@gmail.com</a
+						>
+					</li>
+				</ul>
+			</div>
+
+			<div class="footer-links anim-grid">
+				<div class="footer-column anim-grid">
+					<!-- <h5 class="footer-heading">Quick Links</h5> -->
+					<ul class="footer-list anim-grid">
+						<li class="anim-left"><a href="/">Home</a></li>
+						<li class="anim-left"><a href="/about.html">About</a></li>
+						<li class="anim-left"><a href="/process.html">Process</a></li>
+						<li class="anim-left"><a href="/services.html">Services</a></li>
+						<li class="anim-left"><a href="/work.html">Work</a></li>
+						<li class="anim-left"><a href="/contact.html">Contact</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-column anim-grid">
+					<!-- <h5 class="footer-heading">Legal</h5> -->
+					<ul class="footer-list anim-grid">
+						<li class="anim-left"><a href="/legal/privacy.html">Privacy Policy</a></li>
+						<li class="anim-left"><a href="/legal/terms.html">Terms of Service</a></li>
+						<li class="anim-left"><a href="/legal/disclosures.html">Disclosures</a></li>
+						<li class="anim-left"><a href="/legal/licensing.html">Licensing</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<div class="footer-bottom anim-grid anim-left">
+			<p class="footer-copyright anim-left">
+				&copy; <span id="current-year">2026</span> Octane Studio. All
+				rights reserved.
+			</p>
+			<div class="footer-social anim-grid">
+				<a href="#" class="social-link fb-link anim-left" aria-label="Facebook">
+					<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="18"
+									height="18"
+									viewBox="0 0 24 24"
+									fill="currentColor"
+									aria-hidden="true"
+					>
+						<path
+										d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+						/>
+					</svg>
+				</a>
+				<a href="#" class="social-link li-link anim-left" aria-label="LinkedIn">
+					<svg
+									fill="currentColor"
+									height="16"
+									width="16"
+									id="Capa_1"
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 260.366 260.366"
+									xml:space="preserve"
+					>
+                  <g>
+                    <path
+														d="M34.703,0.183C15.582,0.183,0.014,15.748,0,34.884C0,54.02,15.568,69.588,34.703,69.588   c19.128,0,34.688-15.568,34.688-34.704C69.391,15.75,53.83,0.183,34.703,0.183z"
+										/>
+										<path
+														d="M60.748,83.531H8.654c-2.478,0-4.488,2.009-4.488,4.489v167.675c0,2.479,2.01,4.488,4.488,4.488h52.093   c2.479,0,4.489-2.01,4.489-4.488V88.02C65.237,85.539,63.227,83.531,60.748,83.531z"
+										/>
+										<path
+														d="M193.924,81.557c-19.064,0-35.817,5.805-46.04,15.271V88.02c0-2.48-2.01-4.489-4.489-4.489H93.424   c-2.479,0-4.489,2.009-4.489,4.489v167.675c0,2.479,2.01,4.488,4.489,4.488h52.044c2.479,0,4.489-2.01,4.489-4.488v-82.957   c0-23.802,4.378-38.555,26.227-38.555c21.526,0.026,23.137,15.846,23.137,39.977v81.535c0,2.479,2.01,4.488,4.49,4.488h52.068   c2.478,0,4.488-2.01,4.488-4.488v-91.977C260.366,125.465,252.814,81.557,193.924,81.557z"
+										/>
+                  </g>
+                </svg>
+				</a>
+
+				<a href="#" class="social-link insta-link anim-left" aria-label="Instagram">
+					<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="18"
+									height="18"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									aria-hidden="true"
+					>
+						<rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+						<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+						<line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+					</svg>
+				</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="src/js/process.js" type="module"></script>
+<script src="src/js/anims.js" type="module"></script>
 </body>
 </html>
