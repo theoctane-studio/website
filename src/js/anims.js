@@ -179,6 +179,14 @@ if (contactCTABtn) {
     })
 }
 
+const contactCTABtns = document.querySelectorAll('.contact-btn-cta');
+contactCTABtns.forEach(el => {
+    if (!el) return
+    el.addEventListener('click', () => {
+        unloadPageAndNavigateTo('/contact.html')
+    })
+})
+
 const viewWorkBtn = document.querySelector("section.hero .container .call-to-action .filled-btn.view-work-cta");
 if (viewWorkBtn) {
     viewWorkBtn.addEventListener('click', () => {
@@ -223,6 +231,7 @@ function unloadPageAndNavigateTo(relativePath, timeout= 1750) {
         // elsArray[elsArray.length - 1].addEventListener("transitionstart", () => {
         //     console.log("tran start")
         // })
+        setTimeout(() => { location.href = relativePath; }, 3500);
         elsArray[elsArray.length - 1].addEventListener('transitionend', () => {
             // console.log("tran end")
             location.href = relativePath;

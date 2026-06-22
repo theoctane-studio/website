@@ -12,12 +12,14 @@ main {
 }
 
 .anim-left, .anim-right, .anim-up, .anim-down, .anim-blur {
-	transition: opacity, filter, transform;
-	transition-duration: 1s;
-	transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+	--tf: cubic-bezier(0.2, 0.8, 0.2, 1);
+	transition: var(--default-ease), opacity 1s var(--tf), filter 1s var(--tf), transform 1s var(--tf) !important;
+	/*transition-duration: 1s !important;*/
+	/*transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);*/
 	/*transition: all;*/
 	animation-duration: 1s;
 	animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+	will-change: opacity, filter, transform;
 }
 
 

@@ -436,16 +436,24 @@ main .testimonials .container .logos {
   align-items: center;
   justify-content: space-evenly;
   column-gap: 32px;
+  row-gap: 24px;
   width: 100%;
   margin-bottom: 128px;
   flex-wrap: wrap;
 }
-
-main .testimonials .container .logos img {
-  height: 64px;
+main .testimonials .container .logos div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 12px;
   /*opacity: 66.7%; -- messes w anim */
   filter: brightness(0.667);
   transition: var(--default-ease), filter 0.3s ease !important;
+}
+
+main .testimonials .container .logos div img {
+  height: 64px;
+  
 }
 
 main .testimonials .container .logos img:last-child { /*corti logo bc wider and fatter for some reason*/
@@ -584,6 +592,13 @@ main .process .container .content .timeline-block .text p {
   font-weight: 200;
   font-size: 14px;
   max-width: 95%;
+}
+
+main .process .container .cta{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 64px;
 }
 
 main .faq .container {
