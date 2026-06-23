@@ -239,16 +239,51 @@ main .team .container .members .member img {
 	object-fit: cover;
 }
 
-main .team .container .members .member .text h3 {
+main .team .container .members .member .text a {
+	position: relative;
+	text-decoration: none;
+	color: white;
+	transition: transform 0.2s ease;
+}
+
+main .team .container .members .member .text a h3 {
 	font-weight: 500;
 	font-size: 24px;
 	letter-spacing: -0.05em;
+	transition: transform 0.2s ease;
 }
 
-main .team .container .members .member .text h3 a {
-	text-decoration: none;
-	color: white;
+main .team .container .members .member .text a h3 i {
+	margin-left: 8px;
+	padding-bottom: 2px;
+	position: relative;
 }
+
+main .team .container .members .member .text a h3 i::after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	width: 0;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #fff;
+	/* transform: scaleX(0); */
+	transition: var(--default-ease);
+	transform-origin: center;
+}
+
+main .team .container .members .member .text a:hover,
+main .team .container .members .member .text a:active {
+	cursor: pointer;
+	transform: translateY(-3px);
+}
+
+main .team .container .members .member .text a:hover h3 i::after,
+main .team .container .members .member .text a:active h3 i::after {
+	width: 100%;
+}
+
 
 main .team .container .members .member .text span {
 	font-weight: 200;
