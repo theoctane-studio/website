@@ -66,7 +66,7 @@ modal.addEventListener('click', (event) => {
   }
 });
 
-const testimonialLogos = document.querySelectorAll('section.testimonials .container .logos img');
+const testimonialLogos = document.querySelectorAll('section.testimonials .container .logos div');
 
 testimonialLogos.forEach(logo => {
   logo.addEventListener('click', () => {

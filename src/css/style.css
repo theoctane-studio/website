@@ -453,18 +453,18 @@ main .testimonials .container .logos div {
 
 main .testimonials .container .logos div img {
   height: 64px;
-  
+  transition: var(--default-ease) !important;
 }
 
-main .testimonials .container .logos img:last-child { /*corti logo bc wider and fatter for some reason*/
+main .testimonials .container .logos div:last-of-type img { /*corti logo bc wider and fatter for some reason*/
   /*transform: scale(0.85) -- messes w anims*/
   height: 50px;
 }
 
-main .testimonials .container .logos img:hover,
-main .testimonials .container .logos img:active {
+main .testimonials .container .logos div:hover,
+main .testimonials .container .logos div:active {
   /*opacity: 75%;*/
-  filter: brightness(0.85);
+  filter: brightness(0.5);
   cursor: pointer;
 }
 
@@ -981,7 +981,7 @@ so this is what its gonna be since it works */
     margin-bottom: 16px;
   }
   
-  main .testimonials .container .logos img:last-child {
+  main .testimonials .container .logos div:last-of-type img {
     height: 38px !important;
   }
 
@@ -1227,7 +1227,7 @@ so this is what its gonna be since it works */
     margin-bottom: 16px;
   }
   
-  main .testimonials .container .logos img:last-child {
+  main .testimonials .container .logos div:last-of-type img {
     height: 42px !important;
   }
 
@@ -1473,7 +1473,7 @@ so this is what its gonna be since it works */
     margin-bottom: 16px;
   }
   
-  main .testimonials .container .logos img:last-child {
+  main .testimonials .container .logos div:last-of-type img {
     height: 58px !important;
   }
 
@@ -1716,7 +1716,7 @@ so this is what its gonna be since it works */
     height: 48px !important;
   }
   
-  main .testimonials .container .logos img:last-child {
+  main .testimonials .container .logos div:last-of-type img {
     height: 42px !important;
   }
   
