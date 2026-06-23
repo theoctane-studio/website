@@ -320,8 +320,8 @@ main .process .container .timeline-block .step {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   
-  font-weight: 800;
-  font-family: "GoodTimes", "Good Times", "Geist", sans-serif;
+  font-weight: 400;
+  font-family: "Geist", "GoodTimes", "Good Times", sans-serif;
   writing-mode: vertical-lr;
   font-size: clamp(14px, 10vw, 96px);
   transition: var(--default-ease-in-out);
