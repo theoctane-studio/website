@@ -15,14 +15,6 @@ function throttle(func, limit = 100) {
         }
     }
 }
-
-// Scroll events (throttled for performance)
-window.addEventListener(
-    "scroll",
-    throttle(() => {
-        handleScrollAnimations()
-    }, 20),
-)
 /*
 function initializeScrollAnimations() {
     // Elements to animate on scroll
@@ -112,8 +104,24 @@ function handleScrollAnimations() {
 }
 
 //call handling ev
-document.addEventListener("DOMContentLoaded", handleScrollAnimations);
+document.addEventListener("readystatechange", handleScrollAnimations);
 // handleScrollAnimations(); -- dble call unnecessary
+
+// Scroll events (throttled for performance)
+window.addEventListener(
+    "scroll",
+    throttle(() => {
+        handleScrollAnimations()
+    }, 20),
+)
+
+function isSafari() {
+    return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+}
+
+if (isSafari()) {
+    handleScrollAnimations()
+}
 
 // window.onbeforeunload = () => {
 //     document.querySelectorAll('.in-view').forEach((child) => {
