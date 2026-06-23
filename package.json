@@ -12,6 +12,7 @@
     "vite": "^8.0.12"
   },
   "dependencies": {
-    "shaders": "^2.5.128"
+    "shaders": "^2.5.128",
+    "three": "^0.184.0"
   }
 }
