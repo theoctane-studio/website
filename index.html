@@ -20,6 +20,8 @@
   </head>
   <body>
 
+  <div id="overlay"></div>
+
     <div id="mobile-menu">
       <nav>
         <div class="container">
@@ -61,7 +63,10 @@
       <div class="modal-content">
         <button class="close-btn" id="closeBtn">&times;</button>
 <!--        <img id="popupImage" src="https://picsum.photos/800/600" alt="Centered Demo Image">-->
-        <video src="/showreel.mp4" id="popupVideo" class="showreel" controls></video>
+        <video poster="/poster.png" id="popupVideo" class="showreel" controls>
+          <source src="/showreel.mp4" type="video/mp4" />
+          Your browser does not support the &lt;video&gt; element.
+        </video>
       </div>
     </div>
 
@@ -83,8 +88,12 @@
             <!-- <p class="">> OCTANE SHOWREEL</p> -->
             <!-- <img src="src/assets/porsche.jpeg" alt="very epic porsche" /> -->
 <!--            <img src="/porsche.png" alt="" />-->
-            <video class="showreel" src="/showreel.mp4" autoplay loop muted></video>
+            <video poster="/poster.png" class="showreel" autoplay loop muted>
+              <source src="/showreel.mp4" type="video/mp4" />
+              Your browser does not support the &lt;video&gt; element.
+            </video>
 
+            <i class="ph ph-arrow-square-out"></i>
           </div>
         </div>
       </section>

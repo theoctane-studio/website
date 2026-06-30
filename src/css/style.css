@@ -306,6 +306,7 @@ main .hero .container .window {
   padding: 32px;
   margin-bottom: 128px;
   background: linear-gradient(#000, #151515);
+  position: relative;
 }
 
 main .hero .container .window::after {
@@ -333,7 +334,22 @@ main .hero .container .window video {
   transition: var(--default-ease);
 }
 
-main .hero .container .window video:hover {
+main .hero .container .window video:hover,
+main .hero .container .window video:active {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+  cursor: pointer;
+}
+
+main .hero .container .window i.ph {
+  position: absolute;
+  font-size: clamp(16px, 4vw, 32px);
+  right: clamp(32px, 4vw, 42px);
+  bottom: clamp(34px, 4.5vw, 48px);
+  mix-blend-mode: difference;
+}
+
+main .hero .container .window i.ph:hover,
+main .hero .container .window i.ph:active {
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
   cursor: pointer;
 }
