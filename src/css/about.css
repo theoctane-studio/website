@@ -296,6 +296,41 @@ main .team .container .members .member .text p {
 	font-weight: 200;
 }
 
+main .team .container .members .member .text .email {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	
+	color: rgba(255, 255, 255, 0.75);
+	margin-top: 16px;
+}
+
+main .team .container .members .member .text .email i {
+	margin-right: 8px;
+	max-width: 16px !important;
+	height: 16px;
+	transition: all 0.2s ease;
+}
+main .team .container .members .member .text .email a {
+	color: rgba(255, 255, 255, .75);
+	font-weight: 300;
+	font-size: 18px;
+	transition: all 0.2s ease;
+}
+
+main .team .container .members .member .text .email i:has(+ a:active),
+main .team .container .members .member .text .email i:has(+a:hover),
+main .team .container .members .member .text .email:hover i,
+main .team .container .members .member .text .email:active i,
+main .team .container .members .member .text .email a:active,
+main .team .container .members .member .text .email a:hover,
+main .team .container .members .member .text .email:hover a,
+main .team .container .members .member .text .email:active a {
+	color: rgba(255, 255, 255, 1);
+	transform: translateY(-3px);
+}
+
 main .cta .container {
 	margin-top: 32px;
 	margin-bottom: 192px;

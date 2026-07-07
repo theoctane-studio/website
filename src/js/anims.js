@@ -1,4 +1,3 @@
-
 /**
  * Throttle function to limit function calls to once per specified time
  * @param {Function} func - Function to throttle
