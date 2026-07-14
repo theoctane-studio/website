@@ -1,3 +1,3 @@
-# [https://theoctane.studio/](theoctane.studio)
+# [theoctane.studio](https://theoctane.studio/)
 
 Octane Studio's website
