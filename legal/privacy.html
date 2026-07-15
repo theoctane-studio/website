@@ -27,17 +27,24 @@
         }
 
         .pcontainer {
-            max-width: 800px;
-            margin: 40px 80px;
-            padding: 80px 20px 20px;
+            width: 1024px;
+            /*margin: 40px 80px;*/
+            margin: auto;
+            padding: 80px 0 80px 0;
             font-weight: 200;
+
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
         }
 
         h1, h2 {
             color: white;
-            border-left: 6px solid white;
+            border-left: 4px solid white;
+            border-radius: 2px;
             padding-left: 12px;
             margin-top: 40px;
+            font-weight: 400;
         }
 
         h1 {
@@ -50,6 +57,9 @@
 
         p {
             margin-bottom: 16px;
+            margin-left: 16px;
+            margin-top: 8px;
+            /*text-indent: 16px;*/
         }
 
         ul {
@@ -58,7 +68,7 @@
 
         .highlight {
             color: white;
-            font-weight: bold;
+            font-weight: 400;
         }
 
         @media (max-width: 600px) {
