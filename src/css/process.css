@@ -198,9 +198,9 @@ main section .container {
 
 
 main .hero {
-  background: black;
+  /*background: black;*/
   /*hero grid pattern*/
-  /* background:
+  background:
           radial-gradient(circle at center, rgba(255,255,255,.1), transparent 55%),
           repeating-linear-gradient(
                   90deg,
@@ -215,7 +215,7 @@ main .hero {
                   rgba(255,255,255,.1) 81px
           ),
           radial-gradient(transparent, black),
-          #000; */
+          #000;
   overflow: hidden;
 }
 
@@ -415,14 +415,14 @@ main .process .container .timeline-block .text p{
   color: #ffffffcf;
   text-wrap: balance;
   max-width: 95%;
-  padding: 16px 0px;
+  padding: 16px 0;
 }
 
 main .process .container .timeline-block .text div {
   font-weight: 200;
   color: #ffffffcf;
   max-width: 95%;
-  padding: 16px 0px;
+  padding: 16px 0;
 }
 
 main .process .container .timeline-block .text div ul {

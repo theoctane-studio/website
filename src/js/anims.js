@@ -1,3 +1,25 @@
+import Lenis from 'lenis'
+
+const lenis = new Lenis({
+    duration: 1.2,
+    // Custom easing function (e.g., easeOutQuart)
+    // easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    easing: "easeOutCubic",
+    orientation: 'vertical',
+    gestureOrientation: 'vertical',
+    smoothWheel: true,
+    // smoothTouch: true,
+    // syncTouch: true, // enables smooth scroll on touch devices
+    // touchMultiplier: 2, // increases scrolling speed/sensitivity on mobile
+})
+
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
+
 /**
  * Throttle function to limit function calls to once per specified time
  * @param {Function} func - Function to throttle
