@@ -198,9 +198,9 @@ main section .container {
 
 
 main .hero {
-  /*background: black;*/
+  background: black;
   /*hero grid pattern*/
-  background:
+  /* background:
           radial-gradient(circle at center, rgba(255,255,255,.1), transparent 55%),
           repeating-linear-gradient(
                   90deg,
@@ -215,7 +215,7 @@ main .hero {
                   rgba(255,255,255,.1) 81px
           ),
           radial-gradient(transparent, black),
-          #000;
+          #000; */
   overflow: hidden;
 }
 
@@ -299,18 +299,18 @@ main .process .container {
   width: 100%;
   max-width: 1024px;
   height: 100%;
-  padding-top: 32px;
+  padding-top: 48px;
+  padding-bottom: 64px;
 }
 
 main .process .container .timeline-block {
   min-width: 180px;
   display: grid;
-  grid-template-columns: 0.75fr 1fr 8fr;
-  padding: 24px;
+  grid-template-columns: 0.75fr 0.25fr 8fr;
+  padding-bottom: 48px;
 }
 
-main .process .container .timeline-block .step {
-  /*transform: rotate(180deg);*/
+/* main .process .container .timeline-block .step {
   width: fit-content;
   height: fit-content;
   grid-column: 1 / 2;
@@ -326,20 +326,20 @@ main .process .container .timeline-block .step {
   font-size: clamp(14px, 10vw, 96px);
   transition: var(--default-ease-in-out);
   filter: drop-shadow(10px 0 16px rgba(255, 255, 255, 0.01)) brightness(.65);
-}
+} */
 
-main .process .container .timeline-block:hover .step,
+/* main .process .container .timeline-block:hover .step,
 main .process .container .timeline-block:active .step {
   filter: drop-shadow(10px 0 16px rgba(255, 255, 255, 0.1)) brightness(1);
-}
+} */
 
 main .process .container .timeline-block .line-box {
-  grid-column: 2/3;
+  /* grid-column: 2/3; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 12px;
+  /* gap: 12px; */
 }
 
 
@@ -409,25 +409,20 @@ main .process .container .timeline-block:active .text h4{
   filter: drop-shadow(2px 2px 8px #666);
 }
 
-main .process .container .timeline-block .text h6 {
-  font-size: 22px;
-  font-weight: 500;
-}
-
 main .process .container .timeline-block .text p{
-  text-indent: 24px;
+  /* text-indent: 24px; */
   font-weight: 200;
   color: #ffffffcf;
   text-wrap: balance;
   max-width: 95%;
-  padding: 16px 8px;
+  padding: 16px 0px;
 }
 
 main .process .container .timeline-block .text div {
   font-weight: 200;
   color: #ffffffcf;
   max-width: 95%;
-  padding: 16px 8px;
+  padding: 16px 0px;
 }
 
 main .process .container .timeline-block .text div ul {
