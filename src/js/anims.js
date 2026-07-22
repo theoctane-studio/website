@@ -1,4 +1,3 @@
-
 /**
  * Throttle function to limit function calls to once per specified time
  * @param {Function} func - Function to throttle
@@ -72,6 +71,11 @@ function isInViewport(element, offset = 25) {
 
 //goofy ahh scroll handling func dont ask wtf this does
 function handleScrollAnimations() {
+
+    const overlay = document.getElementById('overlay')
+    setTimeout(() => {
+        overlay.classList.add('closed')
+    }, 150)
 
     animateElements.forEach((element) => {
         //check if in viewport, add tag
@@ -217,18 +221,25 @@ document.querySelectorAll('.logo').forEach(logo => {
  * @param relativePath {string} home directory path of the relative routed page
  * @param timeout {number} time in ms to delay reroute, compensating for animation
  */
-function unloadPageAndNavigateTo(relativePath, timeout= 1750) {
+function unloadPageAndNavigateTo(relativePath, timeout= 1000) {
     const elsInView = document.querySelectorAll('.in-view:not(.anim-grid,g)')
     const elsArray = Array.from(elsInView)
+    const overlay = document.getElementById('overlay')
 
-    elsInView.forEach((child) => {
-        child.classList.remove('in-view');
-        child.classList.add("out-view");
+    overlay.classList.remove("closed")
 
-        // mobileMenu.style.display = 'none';
-        mobileMenu.classList.remove('active');
-        document.scrollingElement.style.overflow = 'scroll';
-    })
+
+    setTimeout(() => {
+        elsInView.forEach((child) => {
+            child.classList.remove('in-view');
+            child.classList.add("out-view");
+
+            // mobileMenu.style.display = 'none';
+            mobileMenu.classList.remove('active');
+            document.scrollingElement.style.overflow = 'scroll';
+        })
+    }, 200)
+
 
     //using dynamic timing to create smoother animation
     if (elsArray[elsArray.length - 1].classList.contains('anim-grid')) {
@@ -239,7 +250,7 @@ function unloadPageAndNavigateTo(relativePath, timeout= 1750) {
         // elsArray[elsArray.length - 1].addEventListener("transitionstart", () => {
         //     console.log("tran start")
         // })
-        setTimeout(() => { location.href = relativePath; }, 3500);
+        setTimeout(() => { location.href = relativePath; }, 1200);
         elsArray[elsArray.length - 1].addEventListener('transitionend', () => {
             // console.log("tran end")
             location.href = relativePath;

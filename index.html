@@ -20,27 +20,29 @@
   </head>
   <body>
 
-    <div id="mobile-menu">
-      <nav>
-        <div class="container">
-          <img class="logo" src="/Octane Wordmark Transparent.png" alt="" draggable="false" />
-          <ul class="links">
-            <button class="filled-btn contact-btn-nav">Let's chat</button>
-            <i id="mobile-menu-close-btn" class="ph ph-x"></i>
-          </ul>
-        </div>
-      </nav>
-      <div class="content">
-        <ul>
-          <h3>What are you looking for?</h3>
-          <a href="/">Home</a>
-<!--          <a href="/work.html">Work</a>-->
-          <a href="/services.html">Services</a>
-          <a href="/process.html">Our Process</a>
-          <a href="/about.html">About</a>
+  <div id="overlay"></div>
+
+  <div id="mobile-menu">
+    <nav>
+      <div class="container">
+        <img class="logo" src="/Octane Wordmark Transparent.png" alt="" draggable="false" />
+        <ul class="links">
+          <button class="filled-btn contact-btn-nav">Let's chat</button>
+          <i id="mobile-menu-close-btn" class="ph ph-x"></i>
         </ul>
       </div>
+    </nav>
+    <div class="content">
+      <ul>
+        <h3>What are you looking for?</h3>
+        <a href="/">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/process.html">Our Process</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </ul>
     </div>
+  </div>
 
     <nav class="anim-down">
       <div class="container anim-grid">
@@ -61,7 +63,10 @@
       <div class="modal-content">
         <button class="close-btn" id="closeBtn">&times;</button>
 <!--        <img id="popupImage" src="https://picsum.photos/800/600" alt="Centered Demo Image">-->
-        <video src="/showreel.mp4" id="popupVideo" class="showreel" controls></video>
+        <video poster="/poster.png" id="popupVideo" class="showreel" controls>
+          <source src="/showreel.mp4" type="video/mp4" />
+          Your browser does not support the &lt;video&gt; element.
+        </video>
       </div>
     </div>
 
@@ -83,8 +88,12 @@
             <!-- <p class="">> OCTANE SHOWREEL</p> -->
             <!-- <img src="src/assets/porsche.jpeg" alt="very epic porsche" /> -->
 <!--            <img src="/porsche.png" alt="" />-->
-            <video class="showreel" src="/showreel.mp4" autoplay loop muted></video>
+            <video poster="/poster.png" class="showreel" autoplay loop muted>
+              <source src="/showreel.mp4" type="video/mp4" />
+              Your browser does not support the &lt;video&gt; element.
+            </video>
 
+            <i class="ph ph-arrow-square-out"></i>
           </div>
         </div>
       </section>
@@ -328,7 +337,7 @@
             rights reserved.
           </p>
           <div class="footer-social">
-            <a href="#" class="social-link insta-link" aria-label="Instagram">
+            <a href="https://www.instagram.com/theoctane.studio/" class="social-link insta-link" aria-label="Instagram">
               <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"

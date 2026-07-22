@@ -27,17 +27,24 @@
         }
 
         .pcontainer {
-            max-width: 800px;
-            margin: 40px 80px;
-            padding: 80px 20px 20px;
+            width: 1024px;
+            /*margin: 40px 80px;*/
+            margin: auto;
+            padding: 80px 0 80px 0;
             font-weight: 200;
+
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
         }
 
         h1, h2 {
             color: white;
-            border-left: 6px solid white;
+            border-left: 4px solid white;
+            border-radius: 2px;
             padding-left: 12px;
             margin-top: 40px;
+            font-weight: 400;
         }
 
         h1 {
@@ -50,6 +57,9 @@
 
         p {
             margin-bottom: 16px;
+            margin-left: 16px;
+            margin-top: 8px;
+            /*text-indent: 16px;*/
         }
 
         ul {
@@ -58,7 +68,7 @@
 
         .highlight {
             color: white;
-            font-weight: bold;
+            font-weight: 400;
         }
 
         @media (max-width: 600px) {
@@ -69,6 +79,8 @@
     </style>
 </head>
 <body>
+
+<div id="overlay"></div>
 
 <div id="mobile-menu">
     <nav>
@@ -84,10 +96,10 @@
         <ul>
             <h3>What are you looking for?</h3>
             <a href="/">Home</a>
-            <!--          <a href="/work.html">Work</a>-->
             <a href="/services.html">Services</a>
             <a href="/process.html">Our Process</a>
             <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
         </ul>
     </div>
 </div>
@@ -199,7 +211,7 @@
                 rights reserved.
             </p>
             <div class="footer-social">
-                <a href="#" class="social-link insta-link" aria-label="Instagram">
+                <a href="https://www.instagram.com/theoctane.studio/" class="social-link insta-link" aria-label="Instagram">
                     <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="18"

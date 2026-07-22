@@ -306,6 +306,7 @@ main .hero .container .window {
   padding: 32px;
   margin-bottom: 128px;
   background: linear-gradient(#000, #151515);
+  position: relative;
 }
 
 main .hero .container .window::after {
@@ -333,7 +334,22 @@ main .hero .container .window video {
   transition: var(--default-ease);
 }
 
-main .hero .container .window video:hover {
+main .hero .container .window video:hover,
+main .hero .container .window video:active {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+  cursor: pointer;
+}
+
+main .hero .container .window i.ph {
+  position: absolute;
+  font-size: clamp(16px, 4vw, 32px);
+  right: clamp(32px, 4vw, 42px);
+  bottom: clamp(34px, 4.5vw, 48px);
+  mix-blend-mode: difference;
+}
+
+main .hero .container .window i.ph:hover,
+main .hero .container .window i.ph:active {
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
   cursor: pointer;
 }
@@ -608,7 +624,8 @@ main .process .container .cta{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 64px;
+  margin-top: 36px;
+  margin-bottom: 24px;
 }
 
 main .faq .container {
@@ -1011,6 +1028,7 @@ so this is what its gonna be since it works */
 
   main .process .container .content .timeline-block {
     margin-bottom: 48px;
+    max-width: 265px;
   }
 
   main .process .container .content .timeline-block .line-box .dot {
@@ -1277,6 +1295,10 @@ so this is what its gonna be since it works */
     height: 2px;
     background-image: linear-gradient(to right, rgba(255,255,255,.5), rgba(0,0,0,0))
   }
+  
+  main .process .container .content .timeline-block {
+    max-width: 280px;
+  }
 
   main .process .container .content .timeline-block .text h4 {
     padding: 0 8px;
@@ -1503,6 +1525,7 @@ so this is what its gonna be since it works */
 
   main .process .container .content .timeline-block {
     margin-bottom: 48px;
+    max-width: 320px;
   }
 
   main .process .container .content .timeline-block .line-box .dot {
@@ -1746,6 +1769,7 @@ so this is what its gonna be since it works */
 
   main .process .container .content .timeline-block {
     margin-bottom: 48px;
+    max-width: 320px;
   }
 
   main .process .container .content .timeline-block .line-box .dot {

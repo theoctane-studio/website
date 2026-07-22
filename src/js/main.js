@@ -61,7 +61,7 @@ for (let i = 0; i < coll.length; i++) {
 
 //modal popup
 const modal = document.getElementById('imgModal');
-const triggerBtn = document.querySelectorAll('main section.hero .container .window video');
+const triggerBtn = document.querySelectorAll('main section.hero .container .window video, main section.hero .container .window video+i.ph');
 const closeBtn = document.getElementById('closeBtn');
 // const popupImage = document.getElementById('popupImage');
 const popupVideo = document.getElementById('popupVideo');
