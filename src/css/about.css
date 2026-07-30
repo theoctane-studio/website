@@ -232,9 +232,14 @@ main .team .container .members .member {
 	margin-bottom: 48px;
 }
 
+main .team .container .members .member:first-of-type img {
+	object-position: 0 0;
+}
+
 main .team .container .members .member img {
 	margin-right: 24px;
 	height: 192px;
+	min-width: 192px;
 	border-radius: 8px;
 	object-fit: cover;
 }
