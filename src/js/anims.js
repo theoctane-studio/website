@@ -1,5 +1,7 @@
 import Lenis from 'lenis'
 
+
+
 const lenis = new Lenis({
     duration: 1.2,
     // Custom easing function (e.g., easeOutQuart)
@@ -12,6 +14,7 @@ const lenis = new Lenis({
     // syncTouch: true, // enables smooth scroll on touch devices
     // touchMultiplier: 2, // increases scrolling speed/sensitivity on mobile
 })
+
 
 function raf(time) {
     lenis.raf(time)
@@ -130,7 +133,12 @@ function handleScrollAnimations() {
 }
 
 //call handling ev
-document.addEventListener("readystatechange", handleScrollAnimations);
+document.addEventListener("readystatechange", () => {
+    if (window.location.hostname === "octane-8e3cb.web.app" || window.location.hostname === "octane-8e3cb.firebaseapp.com") {
+        window.location.href = "https://theoctane.studio" + window.location.pathname + window.location.search;
+    }
+    handleScrollAnimations();
+});
 // handleScrollAnimations(); -- dble call unnecessary
 
 // Scroll events (throttled for performance)
