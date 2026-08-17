@@ -312,7 +312,7 @@ main .hero .container .window {
 main .hero .container .window::after {
   content: "";
   position: absolute;
-  bottom: -35vh;
+  bottom: -6vh;
   left: 50%;
   transform: translateX(-50%);
   width: 70%;
@@ -1202,7 +1202,11 @@ so this is what its gonna be since it works */
 
   main .hero .container .window {
     padding: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 48px;
+  }
+  
+  main .hero .container .window::after {
+    bottom: -36px;
   }
 
   main .services .container {
@@ -1453,7 +1457,11 @@ so this is what its gonna be since it works */
 
   main .hero .container .window {
     padding: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 64px;
+  }
+  
+  main .hero .container .window::after {
+    bottom: -4vh;
   }
 
   main .services .container {
@@ -1699,7 +1707,7 @@ so this is what its gonna be since it works */
 
   main .hero .container .window {
     padding: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 96px;
   }
 
   main .services .container {
@@ -1932,7 +1940,7 @@ so this is what its gonna be since it works */
   }
   
   main .hero .container .window::after {
-    bottom: -10vh;
+    bottom: -6vh;
   }
 
   main .process .container .content {
@@ -1972,7 +1980,7 @@ so this is what its gonna be since it works */
   }
   
   main .hero .container .window::after {
-    bottom: -23vh;
+    bottom: -6vh;
   }
 
   main .services .container {
