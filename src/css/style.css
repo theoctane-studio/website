@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");*/
 
 
 :root {
@@ -171,7 +171,9 @@ nav .container .links a:hover {
 nav .container .links hr {
   height: 16px;
   color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   margin-right: 32px;
+  opacity: 0.2;
 }
 
 nav .container .links #mobile-menu-btn {
